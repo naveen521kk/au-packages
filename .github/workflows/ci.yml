@@ -35,8 +35,8 @@ jobs:
         Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version
         $PSVersionTable
         $ErrorActionPreference = 'Continue'
-        ./update_all.ps1 -ForcedPackages false
-        7z a au_temp.zip $Env:TEMP\chocolatey\au\*
+        ./mysql-python/update.ps1
+        7z a au_temp.zip $PWD\mysql-python\*
 
     # Runs a set of commands using the runners shell
     - uses: actions/upload-artifact@v2
