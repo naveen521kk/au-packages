@@ -38,9 +38,10 @@ jobs:
         . "$Env:TEMP/au/scripts/Install-AU.ps1" $Env:au_version
         $ErrorActionPreference = 'Continue'
         ./update_all.ps1 -ForcedPackages false
+        7z a au_temp.zip $Env:TEMP\chocolatey\au\*
 
     # Runs a set of commands using the runners shell
     - uses: actions/upload-artifact@v2
       with:
         name: report.txt
-        path: mysql-python/report.txt
+        path: au_temp.zip
