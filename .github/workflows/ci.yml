@@ -15,7 +15,6 @@ jobs:
     # The type of runner that the job will run on
     runs-on: windows-latest
 
-
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
@@ -23,15 +22,22 @@ jobs:
     # Runs a single command using the runners shell
     - name: Install AU
       run: cinst au
-      
+
     - name: Get and Upload Packages
       env:
         github_api_key: ${{ secrets.GITHUB_TOKEN }}
         github_gist_id: ${{ secrets.gist_id_github }}
 
       run: |
-        cd mysql-python
-        ./update.ps1
+        git config --global user.email "chocolatey@syrusdark.website"
+        git config --global user.name "Chocolatey"
+        git config --global core.safecrlf false
+        Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version
+        $PSVersionTable
+        git clone -q https://github.com/majkinetor/au.git $Env:TEMP/au
+        . "$Env:TEMP/au/scripts/Install-AU.ps1" $Env:au_version
+        $ErrorActionPreference = 'Continue'
+        ./update_all.ps1 -ForcedPackages false
 
     # Runs a set of commands using the runners shell
     - uses: actions/upload-artifact@v2
