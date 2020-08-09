@@ -14,8 +14,8 @@ and can be verified by doing the following:
   - Use chocolatey utility 'checksum.exe'
 3. The checksums should match the following:
 
-  checksum type: sha256
-  checksum32: 57C40472A3C3A8F76D53E1683496B1447EF71FD7FE096C3B947A523EA6F27630
-  checksum64: 54CAC5887987570D4C0ED758529EAD91A87759DD4B7FE66890706C5DD6C64E09
+  checksum type: 
+  checksum32: 
+  checksum64: 
 
 The file 'LICENSE.txt' has been obtained from <https://github.com/mysql/mysql-connector-python/blob/master/LICENSE.txt>
