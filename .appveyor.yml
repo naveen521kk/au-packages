@@ -18,7 +18,7 @@ environment:
   au_test_groups: 1
 
   # Github token to commit pushed packages to repository
-  github_user_repo: {github_user}/{repository}
+  github_user_repo: naveen521kk/au-packages
   github_api_key:
     secure: LZPBzxBYJGVHzp/Opystipa60ePD+u2YaPpmy5iRrJx7x15KVBqNjs3kqezK4b/C #https://ci.appveyor.com/tools/encrypt
 
