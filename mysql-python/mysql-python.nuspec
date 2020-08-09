@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>mysql-python</id>
-    <version>8.0.19</version>
+    <version>8.0.21</version>
     <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/mysql-python</packageSourceUrl>
     <owners>naveen521kk</owners>
     <title>MySQL Connector Python (Install)</title>
