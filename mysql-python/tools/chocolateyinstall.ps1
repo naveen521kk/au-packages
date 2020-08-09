@@ -13,7 +13,7 @@ $packageArgs = @{
   checksumType   = 'sha256'
   checksum64    = '54CAC5887987570D4C0ED758529EAD91A87759DD4B7FE66890706C5DD6C64E09'
   checksumType64= 'sha256'
-  softwareName   = 'mysql*'
+  softwareName   = 'mysql connector python*'
   silentArgs    = "/qn"
   validExitCodes= @(0)
 }

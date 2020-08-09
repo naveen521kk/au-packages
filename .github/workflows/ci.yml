@@ -24,22 +24,13 @@ jobs:
       run: cinst au
 
     - name: Get and Upload Packages
-      env:
-        github_api_key: ${{ secrets.GITHUB_TOKEN }}
-        github_gist_id: ${{ secrets.gist_id_github }}
-
       run: |
-        git config --global user.email "chocolatey@syrusdark.website"
-        git config --global user.name "Chocolatey"
-        git config --global core.safecrlf false
-        Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version
-        $PSVersionTable
-        $ErrorActionPreference = 'Continue'
-        ./mysql-python/update.ps1
-        7z a au_temp.zip $PWD\mysql-python\*
-
+        cd mysql-python
+        choco pack
+        choco install --no-progress mysql-python -source "'.;https://chocolatey.org/api/v2/'"
+        choco uninstall -y mysql-python
     # Runs a set of commands using the runners shell
     - uses: actions/upload-artifact@v2
       with:
-        name: report.txt
-        path: au_temp.zip
+        name: chocologs
+        path: C:\ProgramData\chocolatey\logs\chocolatey.log
