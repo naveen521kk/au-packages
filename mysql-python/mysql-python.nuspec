@@ -19,7 +19,7 @@
     <bugTrackerUrl>https://bugs.mysql.com/</bugTrackerUrl>
     <tags>mysql-python mysql python</tags>
     <summary>MySQL Connector/Python for Windows System</summary>
-    <description>MySQL Connector/Python enables Python programs to access MySQL databases, using an API that is compliant with the [Python Database API Specification v2.0 (PEP 249). ](http://www.python.org/dev/peps/pep-0249/)</description>
+    <description>MySQL Connector/Python enables Python programs to access MySQL databases, using an API that is compliant with the [Python Database API Specification v2.0 (PEP 249). ](http://www.python.org/dev/peps/pep-0249/). Please inform maintainers as this is an [automatic package](https://chocolatey.org/docs/automatic-packages).</description>
     <releaseNotes>https://dev.mysql.com/doc/relnotes/connector-python/en/</releaseNotes>   
     <dependencies>
       <dependency id="python" version="2.7" />
