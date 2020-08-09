@@ -3,8 +3,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>mysql-python</id>
-    <version>8.0.21</version>
-    <packageSourceUrl>https://github.com/naveen521kk/au-packages</packageSourceUrl>
+    <version>8.0.20</version>
+    <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/mysql-python</packageSourceUrl>
     <owners>naveen521kk</owners>
     <title>MySQL Connector Python (Install)</title>
     <authors>Oracle</authors>
@@ -18,7 +18,7 @@
     <!--<mailingListUrl></mailingListUrl>-->
     <bugTrackerUrl>https://bugs.mysql.com/</bugTrackerUrl>
     <tags>mysql-python mysql python</tags>
-    <summary>MySQL Connector/Python enables Python programs to access MySQL databases</summary>
+    <summary>MySQL Connector/Python for Windows System</summary>
     <description>MySQL Connector/Python enables Python programs to access MySQL databases, using an API that is compliant with the [Python Database API Specification v2.0 (PEP 249). ](http://www.python.org/dev/peps/pep-0249/)</description>
     <releaseNotes>https://dev.mysql.com/doc/relnotes/connector-python/en/</releaseNotes>   
     <dependencies>

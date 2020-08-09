@@ -52,7 +52,7 @@ $Options = [ordered]@{
 function global:au_GetLatest {
   $download_page = Invoke-WebRequest -Uri $releasesx64 -UseBasicParsing
   $regex   = '.msi$'
-  $url64     = $download_page.links | ? href -match $regex | select -First 1 -expand href
+  $url64   = $download_page.links | ? href -match $regex | select -First 1 -expand href
   $version = $url64 -split '-|.msi' | select -Last 1 -Skip 4
   
   $download_page = Invoke-WebRequest -Uri $releasesx32 -UseBasicParsing
@@ -72,7 +72,7 @@ function global:au_SearchReplace {
     }
     ".\tools\chocolateyinstall.ps1" = @{
       "(?i)(^\s*Url\s*=\s*)'.*'"                  = "`${1}'$($Latest.URL32)'"
-      "(?i)(^\s*Url64bit\s*=\s*)'.*'"                = "`${1}'$($Latest.URL64)'"
+      "(?i)(^\s*Url64bit\s*=\s*)'.*'"             = "`${1}'$($Latest.URL64)'"
       "(?i)(^\s*Checksum\s*=\s*)'.*'"             = "`${1}'$($Latest.Checksum32)'"
       "(?i)(^\s*Checksum64\s*=\s*)'.*'"           = "`${1}'$($Latest.Checksum64)'"
       "(?i)(^\s*ChecksumType\s*=\s*)'.*'"         = "`${1}'$($Latest.ChecksumType32)'"
@@ -81,4 +81,4 @@ function global:au_SearchReplace {
   }
 }
 
-update -ChecksumFor none -NoCheckUrl
+update
