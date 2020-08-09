@@ -62,7 +62,7 @@ function global:au_GetLatest {
 
 function global:au_SearchReplace {
   @{
-    ".\legal\VERIFICATION.txt"      = @{
+    ".\tools\VERIFICATION.txt"      = @{
       "(?i)(^\s*location on\:?\s*)\<.*\>" = "`${1}<$releases>"
       "(?i)(\s*64\-Bit Software.*)\<.*\>" = "`${1}<$($Latest.URL64)>"
       "(?i)(\s*32\-Bit Software.*)\<.*\>" = "`${1}<$($Latest.URL32)>"
