@@ -38,6 +38,7 @@ jobs:
         Test-Path -Path "C:\Program Files\LOVE"
         cd ../
         cd travis
+        choco pack
         choco install --no-progress travis -source "'.;https://chocolatey.org/api/v2/'"
         choco uninstall -y travis
     # Runs a set of commands using the runners shell
