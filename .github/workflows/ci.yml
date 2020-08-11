@@ -37,9 +37,9 @@ jobs:
         choco uninstall -y love2d
         Test-Path -Path "C:\Program Files\LOVE"
         cd ../
-        cd travis-cli
-        choco install --no-progress travis-cli -source "'.;https://chocolatey.org/api/v2/'"
-        choco uninstall -y travis-cli
+        cd travis
+        choco install --no-progress travis -source "'.;https://chocolatey.org/api/v2/'"
+        choco uninstall -y travis
     # Runs a set of commands using the runners shell
     - uses: actions/upload-artifact@v2
       with:
