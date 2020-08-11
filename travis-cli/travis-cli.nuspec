@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>travis-cli</id>
+    <version>1.8.0</version>
+    <packageSourceUrl>https://github.com/naveen521kk/au-packages</packageSourceUrl>
+    <owners>naveen521kk</owners>
+    <title>travis-cli (Install)</title>
+    <authors>Konstantin Haase, Hiro Asari, Henrik Hodne, joshua-anderson, Aaron Hill, Piotr Milcarz, Buck Doyle, Peter Souter, Christopher Grim, Joe Corcoran, Peter van Dijk, Sven Fuchs, Aakriti Gupta, Josh Kalderimis, Piotr Sarnacki, Ke Zhu, Max Barnash, Renée Hendricksen, carlad, Carlos Palhares, Dan Buch, María de Antón, Mathias Meyer, Matt Toothman, mariadeanton, techgaun, Alpha, Andreas Tiefenthaler, Beau Bouchard, Corinna Wiesner, David Rodríguez, Eugene, Eugene Shubin, Igor Wiedler, Ivan Pozdeev, Joep van Delft, Stefan Nordhausen, Thais Camilo and Konstantin Haase, Tobias Bieniek, Adam Baxter, Adam Lavin, Adrien Brault, Alfie John, Aloïs Thévenot, Basarat Ali Syed, Benjamin Manns, Christian Höltje, Dani Hodovic, Daniel Chatfield, Dominic Jodoin, Eric Herot, Eugene K, George Millo, Gunter Grodotzki, Harald Nordgren, HaraldNordgren, Igor, Iulian Onofrei, Jacob Atzen, Jacob Burkhart, James Nylen, Joe Rafaniello, Jon-Erik Schneiderhan, Jonas Chromik, Jonne Haß, Julia S.Simon, Justin Lambert, Laurent Petit, Maarten van Vliet, Marco Craveiro, Mario Visic, Matt, Matteo Sumberaz, Matthias Bussonnier, Michael Mior, Michael S. Fischer, Miro Hrončok, Neamar, Nero Leung, Nicolas Bessi (nbessi), Nikhil Owalekar, Peter Bengtsson, Peter Drake, Raphaël Pinson, Rob Hoelz, Robert Grider, Robert Van Voorhees, Simon Cropp, Titus, Titus Wormer, Tobias Wilken, Zachary Gershman, Zachary Scott, designerror, ia, jeffdh, john muhl, slewt</authors>
+    <projectUrl>https://github.com/travis-ci/travis.rb</projectUrl>
+    <iconUrl>http://about.travis-ci.org/images/travis-mascot-200px.png</iconUrl>
+    <copyright>©2020 Travis CI, GmbH </copyright>
+    <licenseUrl>https://github.com/travis-ci/travis.rb/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/travis-ci/travis.rb/tree/master</projectSourceUrl>
+    <docsUrl>https://github.com/travis-ci/travis.rb/blob/master/README.md</docsUrl>
+    <bugTrackerUrl>https://github.com/travis-ci/travis.rb/issues</bugTrackerUrl>
+    <tags>travis-cli travis cli ruby</tags>
+    <summary>Command line client to interface with a Travis CI service.</summary>
+    <description>
+    The travis gem includes both a command line client and a Ruby library to interface with a Travis CI service. Both work with travis-ci.org, travis-ci.com or any custom Travis CI setup you might have.
+For documentation please read this [ReadMe file](https://github.com/travis-ci/travis.rb/blob/master/README.md)
+This install Travis-cli using Ruby.
+
+**Please Note:** This is an automatically updated package. If you find it is out of date by more than a day or two, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+    </description>
+    <releaseNotes>https://github.com/travis-ci/travis.rb#version-history</releaseNotes>
+    <dependencies>
+      <dependency id="ruby" version="2.3.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

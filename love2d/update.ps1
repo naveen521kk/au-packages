@@ -35,9 +35,6 @@ function global:au_GetLatest {
 function global:au_BeforeUpdate() {
   $Latest.Checksum32 = Get-RemoteChecksum $Latest.URL32
   $Latest.Checksum64 = Get-RemoteChecksum $Latest.URL64
-  $xml = [xml](get-content ".\love2d.nuspec")
-  $xml.package.metadata.releaseNotes = ""
-  $xml.Save(".\love2d.nuspec")
 }
 #todo from here
 function global:au_SearchReplace {
@@ -51,7 +48,7 @@ function global:au_SearchReplace {
       "(?i)(^\s*ChecksumType64\s*=\s*)'.*'"       = "`${1}'$($Latest.ChecksumType64)'"
     }
     ".\love2d.nuspec" = @{
-      "(?im)(<releaseNotes>)(.*?)(<\/releaseNotes>)"   = "`${1}$($Latest.RELEASENOTES)`${3}"
+      "(?im)(<releaseNotes>)(.*?)(<\/releaseNotes>)"   = "`${1}https://love2d.org/wiki/$($Latest.Version)`${3}"
     }
   }
 }
