@@ -40,6 +40,8 @@ jobs:
         cd travis
         choco pack
         choco install --no-progress travis -source "'.;https://chocolatey.org/api/v2/'"
+        refreshenv
+        travis
         choco uninstall -y travis
     # Runs a set of commands using the runners shell
     - uses: actions/upload-artifact@v2
