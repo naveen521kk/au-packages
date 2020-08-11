@@ -1,10 +1,52 @@
 import-module au
 
-#for mysql python connector
+#for love2d
 $releases = 'https://github.com/love2d/love/releases/'
 $github_api_url='https://api.github.com/repos/love2d/love/releases'
 
+$Options = [ordered]@{
+  Timeout = 100
+  Threads = 15
+  Push    = $true
+    
+  # Save text report in the local file report.txt
+  Report = @{
+      Type = 'text'
+      Path = "$PSScriptRoot\report.txt"
+  }
+  
+  # Then save this report as a gist using your api key and gist id
+  Gist = @{
+      ApiKey = $Env:github_api_key
+      Id     = $Env:github_gist_id
+      Path   = "$PSScriptRoot\report.txt"
+  }
 
+  # Persist pushed packages to your repository
+  Git = @{
+      User = 'naveen521kk'
+      Password = $Env:github_api_key
+  }
+  
+  # Then save run info which can be loaded with Import-CliXML and inspected
+  RunInfo = @{
+      Path = "$PSScriptRoot\update_info.xml"
+  }
+
+  # Finally, send an email to the user if any error occurs and attach previously created run info
+  Mail = if ($Env:mail_user) {
+          @{
+             To          = $Env:mail_user
+             Server      = 'smtp.gmail.com'
+             UserName    = $Env:mail_user
+             Password    = $Env:mail_pass
+             Port        = 587
+             EnableSsl   = $true
+             Attachment  = "$PSScriptRoot\$update_info.xml"
+             UserMessage = 'Save attachment and load it for detailed inspection: <code>$info = Import-CliXCML update_info.xml</code>'
+          }
+  } else {}
+}
 function global:au_GetLatest {
   $contentFetched = Invoke-WebRequest $github_api_url | ConvertFrom-Json
   $i=0
@@ -50,4 +92,4 @@ function global:au_SearchReplace {
   }
 }
 
-update -NoReadme
+update
