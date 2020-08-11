@@ -2,7 +2,7 @@
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
-    <id>travis-cli</id>
+    <id>travis</id>
     <version>1.8.0</version>
     <packageSourceUrl>https://github.com/naveen521kk/au-packages</packageSourceUrl>
     <owners>naveen521kk</owners>
@@ -16,7 +16,7 @@
     <projectSourceUrl>https://github.com/travis-ci/travis.rb/tree/master</projectSourceUrl>
     <docsUrl>https://github.com/travis-ci/travis.rb/blob/master/README.md</docsUrl>
     <bugTrackerUrl>https://github.com/travis-ci/travis.rb/issues</bugTrackerUrl>
-    <tags>travis-cli travis cli ruby</tags>
+    <tags>travis travis-cli cli ruby</tags>
     <summary>Command line client to interface with a Travis CI service.</summary>
     <description>
     The travis gem includes both a command line client and a Ruby library to interface with a Travis CI service. Both work with travis-ci.org, travis-ci.com or any custom Travis CI setup you might have.
