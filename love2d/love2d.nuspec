@@ -20,16 +20,16 @@
     <tags>love2d lua luajit gamedev game-developement</tags>
     <summary>LÖVE is an awesome framework you can use to make 2D games in Lua.</summary>
     <description>LÖVE is an *awesome* framework you can use to make 2D games in Lua. It's free, open-source, and works on Windows, Mac OS X, Linux, Android and iOS.
-    LÖVE is totally free, and can be used in anything from friendly open-source hobby projects, to evil, closed-source commercial ones. 
-    ## Open Source
-    LÖVE is licensed under the liberal zlib/libpng license. 
-    ## Community
-    If you get stuck, many friendly people are ready to help you at the forums. Be warned, however, that it sometimes gets too friendly.
-    ## Games
-    LÖVE has been used for commercial projects, game jams, prototyping, and everything in between. Here are a few examples.
-    
-    This package is to install Love2D.
-    **Please Note:** This is an automatically updated package. If you find it is out of date by more than a day or two, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+LÖVE is totally free, and can be used in anything from friendly open-source hobby projects, to evil, closed-source commercial ones. 
+# Open Source
+LÖVE is licensed under the liberal zlib/libpng license. 
+# Community
+If you get stuck, many friendly people are ready to help you at the forums. Be warned, however, that it sometimes gets too friendly.
+# Games
+LÖVE has been used for commercial projects, game jams, prototyping, and everything in between. Here are a few examples.
+
+This package is to install Love2D.
+**Please Note:** This is an automatically updated package. If you find it is out of date by more than a day or two, please contact the maintainer(s) and let them know the package is no longer updating correctly.
     </description>
     <releaseNotes>Released: 2019-10-27
 
