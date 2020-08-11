@@ -36,7 +36,7 @@ function global:au_BeforeUpdate() {
   $Latest.Checksum32 = Get-RemoteChecksum $Latest.URL32
   $Latest.Checksum64 = Get-RemoteChecksum $Latest.URL64
   $xml = [xml](get-content ".\love2d.nuspec")
-  $xml.package.metadata.releaseNotes = $null
+  $xml.package.metadata.releaseNotes = ""
   $xml.Save(".\love2d.nuspec")
 }
 #todo from here
