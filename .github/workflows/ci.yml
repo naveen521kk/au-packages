@@ -34,6 +34,7 @@ jobs:
         choco pack
         choco install --no-progress love2d -source "'.;https://chocolatey.org/api/v2/'"
         choco uninstall -y love2d
+        Test-Path -Path "C:\Program Files\LOVE"
     # Runs a set of commands using the runners shell
     - uses: actions/upload-artifact@v2
       with:
