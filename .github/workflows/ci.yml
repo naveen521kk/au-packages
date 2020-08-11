@@ -33,6 +33,7 @@ jobs:
         cd love2d
         choco pack
         choco install --no-progress love2d -source "'.;https://chocolatey.org/api/v2/'"
+        choco uninstall -y love2d
     # Runs a set of commands using the runners shell
     - uses: actions/upload-artifact@v2
       with:
