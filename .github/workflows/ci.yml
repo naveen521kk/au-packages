@@ -29,6 +29,10 @@ jobs:
         choco pack
         choco install --no-progress mysql-python -source "'.;https://chocolatey.org/api/v2/'"
         choco uninstall -y mysql-python
+        cd ../
+        cd love2d
+        choco pack
+        choco install --no-progress love2d -source "'.;https://chocolatey.org/api/v2/'"
     # Runs a set of commands using the runners shell
     - uses: actions/upload-artifact@v2
       with:
