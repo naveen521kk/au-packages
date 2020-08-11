@@ -1,9 +1,9 @@
 
 
 [![](https://ci.appveyor.com/api/projects/status/github/naveen521kk/au-packages?svg=true)](https://ci.appveyor.com/project/naveen521kk/au-packages)
-[Update status](https://gist.github.com/naveen521kk)
+[![Update Status](https://img.shields.io/badge/Update%20status-https://gist.github.com/naveen521kk-red)](https://gist.github.com/naveen521kk)
 [![](http://transparent-favicon.info/favicon.ico)](#)
-[chocolatey/naveen521kk](https://chocolatey.org/profiles/naveen521kk)
+[![chocolatey/naveen521kk](https://img.shields.io/badge/chocolatey-naveen521kk-informational)](https://chocolatey.org/profiles/naveen521kk)
 
 
 
