@@ -34,8 +34,7 @@ environment:
 
   # ID of the gist used to save run results - create a gist under the github_user (secret or not) and grab the id - https://gist.github.com/name/id
   # Optional, leave empty to create anonymous gist
-  gist_id:
-    secure: 4VZSSK9OVF/4DKphQm3FLB5VTx7pgftw8+JehQ3RirW3UNuhyjoLPi2lTGC4ZAuz
+  gist_id: 64dce37e90a24ba0020575871cbb2b2f
 
   # Force test: gist id for test results
   gist_id_test:
@@ -45,7 +44,7 @@ environment:
     secure: mrlpl7rIFjpgpRepfEGJjIDG5l9WtsDqYLJkKijIw6beOLc07bM2J+58J4+Q/X8J # https://ci.appveyor.com/tools/encrypt
 
 init:
-- git config --global user.email "chocolatey@realdimensions.net"
+- git config --global user.email "chocolatey@syrusdark.website"
 - git config --global user.name "Chocolatey"
 - git config --global core.safecrlf false
 
