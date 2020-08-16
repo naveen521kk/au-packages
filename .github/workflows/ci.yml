@@ -40,10 +40,13 @@ jobs:
         cd travis
         choco pack
         choco install --no-progress travis -source "'.;https://chocolatey.org/api/v2/'"
-        echo "::add-path::C:\tools\ruby\bin"
-    - name: Try test travis
-      run: |
-        travis version
+        choco uninstall travis
+        cd ../
+        cd python.portable
+        choco pack
+        choco install --no-progress python.portable -source "'.;https://chocolatey.org/api/v2/'"
+        cmd.exe /C where python
+        choco uninstall python.portable
         
     # Runs a set of commands using the runners shell
     - uses: actions/upload-artifact@v2
