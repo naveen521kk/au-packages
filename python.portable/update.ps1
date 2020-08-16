@@ -14,11 +14,11 @@ function global:au_GetLatest {
     }
   }
   $version = (Get-Version $stableReleaseTitle).Version
+  $versionStr = $version.toString()
   $releasenotes="https://docs.python.org/release/$version/whatsnew/changelog.html#changelog"
-  $LicenseUrl="https://www.python.org/download/releases/$version/license"
+  $LicenseUrl="https://docs.python.org/$($versionStr.SubString(0,3))/license.html"
   return @{ Version = $version; RELEASENOTES = $releasenotes; LicenseUrl = $LicenseUrl}
 }
-#todo from here
 function global:au_SearchReplace {
   @{
     ".\tools\chocolateyinstall.ps1" = @{

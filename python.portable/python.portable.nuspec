@@ -11,7 +11,7 @@
     <projectUrl>https://www.python.org/</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/naveen521kk/au-packages@master/python.portable/python.svg</iconUrl>
     <copyright>2020 Python Software Foundation</copyright>
-    <licenseUrl>https://www.python.org/download/releases/3.8.5/license</licenseUrl>
+    <licenseUrl>https://docs.python.org/3.8/license.html</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/python/cpython</projectSourceUrl>
     <docsUrl>https://docs.python.org/</docsUrl>
