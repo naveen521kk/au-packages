@@ -22,7 +22,7 @@ function global:au_GetLatest {
 function global:au_SearchReplace {
   @{
     ".\tools\chocolateyinstall.ps1" = @{
-      "(?i)(^\`$version\s*=\s*)'.*"                  = "`${1}'$($Latest.Version)'"
+      "(?i)(^\`$version\s*=\s*)'.*"                  = "`${1}'$($Latest.Version)'.SubString(0,5)"
     }
     ".\python.portable.nuspec" = @{
       "(?im)(<releaseNotes>)(.*?)(<\/releaseNotes>)"   = "`${1}$($Latest.RELEASENOTES)`${3}"
