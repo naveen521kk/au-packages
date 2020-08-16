@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>python.portable</id>
-    <version>3.8.5</version>
+    <version>3.8.5.20200816</version>
     <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/python.portable</packageSourceUrl>
     <owners>naveen521kk</owners>
     <title>Python (Portable)</title>
