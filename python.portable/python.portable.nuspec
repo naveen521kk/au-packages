@@ -9,7 +9,7 @@
     <title>Python (Portable)</title>
     <authors>Python Software Foundation</authors>
     <projectUrl>https://www.python.org/</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/naveen521kk/au-packages/python.portable/python.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/naveen521kk/au-packages@master/python.portable/python.svg</iconUrl>
     <copyright>2020 Python Software Foundation</copyright>
     <licenseUrl>https://www.python.org/download/releases/3.8.5/license</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
