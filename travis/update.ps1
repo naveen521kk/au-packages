@@ -1,6 +1,5 @@
 import-module au
 
-#for love2d
 $github_api_url='https://api.github.com/repos/travis-ci/travis.rb/releases'
 
 function global:au_GetLatest {
@@ -14,7 +13,7 @@ function global:au_GetLatest {
   $version = $stableRelease.tag_name.Substring(1)
   return @{ Version = $version; }
 }
-#todo from here
+
 function global:au_SearchReplace {
   @{
     ".\tools\chocolateyinstall.ps1" = @{
