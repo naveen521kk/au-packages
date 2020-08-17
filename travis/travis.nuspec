@@ -10,7 +10,7 @@
     <!--Removed all contributers name and replaced with this because of https://github.com/naveen521kk/au-packages/issues/2-->
     <authors>Travis CI Contributors</authors>
     <projectUrl>https://github.com/travis-ci/travis.rb</projectUrl>
-    <iconUrl>http://about.travis-ci.org/images/travis-mascot-200px.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/naveen521kk/au-packages@master/travis/travis.png</iconUrl>
     <copyright>©2020 Travis CI, GmbH </copyright>
     <licenseUrl>https://github.com/travis-ci/travis.rb/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
