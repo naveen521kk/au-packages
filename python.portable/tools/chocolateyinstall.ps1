@@ -8,7 +8,7 @@ $nugetLoc = Get-ChocolateyWebFile `
   -FileFullPath "$toolsDir" `
   -Url $nugetUrl `
   -Checksum "de9bd4de656fedd091ceeb0e14ac918a" `
-  - ChecksumType "md5"
+  -ChecksumType "md5"
 if ( $osBitness ){
   & "$nugetLoc" install pythonx86 -Version $version -OutputDirectory "$toolsDir\Python" -Verbosity "quiet"
 } else {
