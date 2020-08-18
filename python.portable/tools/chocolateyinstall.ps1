@@ -5,7 +5,7 @@ $osBitness = Get-OSArchitectureWidth -Compare 32 -or $env:ChocolateyForceX86 -eq
 $nugetUrl="https://dist.nuget.org/win-x86-commandline/v5.8.0-preview.1/nuget.exe"
 $nugetLoc = Get-ChocolateyWebFile `
   -PackageName "Nuget" `
-  -FileFullPath "$toolsDir\nuget1.exe" `
+  -FileFullPath "$toolsDir" `
   -Url $nugetUrl `
   -Checksum "de9bd4de656fedd091ceeb0e14ac918a" `
   - ChecksumType "md5"
@@ -14,3 +14,5 @@ if ( $osBitness ){
 } else {
   & "$nugetLoc" install python -Version $version -OutputDirectory "$toolsDir\Python" -Verbosity "quiet"
 }
+
+Remove-Item nugetLoc
