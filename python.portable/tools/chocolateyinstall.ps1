@@ -12,9 +12,9 @@ $nugetLoc = Get-ChocolateyWebFile `
   -ChecksumType "md5"
 
 if ( $osBitness ){
-  & "$nugetLoc" install pythonx86 -Version $version -OutputDirectory "$toolsDir\Python" -Verbosity "quiet"
+  & "$toolsDir\nuget1.exe" install pythonx86 -Version $version -OutputDirectory "$toolsDir\Python" -Verbosity "quiet"
 } else {
-  & "$nugetLoc" install python -Version $version -OutputDirectory "$toolsDir\Python" -Verbosity "quiet"
+  & "$toolsDir\nuget1.exe" install python -Version $version -OutputDirectory "$toolsDir\Python" -Verbosity "quiet"
 }
 
-Remove-Item nugetLoc
+Remove-Item $toolsDir\nuget1.exe
