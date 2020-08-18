@@ -6,9 +6,9 @@
     <version>1.8.8</version>
     <packageSourceUrl>https://github.com/naveen521kk/au-packages</packageSourceUrl>
     <owners>naveen521kk</owners>
-    <title>travis-cli (Install)</title>
+    <title>Travis-CLI (Install)</title>
     <!--Removed all contributers name and replaced with this because of https://github.com/naveen521kk/au-packages/issues/2-->
-    <authors>Travis CI Contributors</authors>
+    <authors>travis.rb Contributors</authors>
     <projectUrl>https://github.com/travis-ci/travis.rb</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/naveen521kk/au-packages@master/travis/travis.png</iconUrl>
     <copyright>©2020 Travis CI, GmbH </copyright>
