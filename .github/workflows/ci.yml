@@ -30,11 +30,11 @@ jobs:
         choco install --no-progress mysql-python -source "'.;https://chocolatey.org/api/v2/'"
         choco uninstall -y mysql-python
         cd ../
-        cd love2d
+        cd love.install
         choco pack
-        choco install --no-progress love2d -source "'.;https://chocolatey.org/api/v2/'"
+        choco install --no-progress love.install -source "'.;https://chocolatey.org/api/v2/'"
         Test-Path -Path "C:\Program Files\LOVE"
-        choco uninstall -y love2d
+        choco uninstall -y love.install
         Test-Path -Path "C:\Program Files\LOVE"
         cd ../
         cd travis
