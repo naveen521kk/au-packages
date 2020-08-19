@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>love</id>
-    <version>0.10.0</version>
+    <version>11.3</version>
     <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/love.install</packageSourceUrl>
     <owners>naveen521kk</owners>
-    <title>LÖVE - Free 2D Game Engine</title>
+    <title>LÃ–VE - Free 2D Game Engine</title>
     <authors>LOVE Development Team</authors>
     <projectUrl>https://love2d.org</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/love2d/love/extra/nsis/love.ico</iconUrl>
@@ -18,9 +18,9 @@
     <!--<mailingListUrl></mailingListUrl>-->
     <bugTrackerUrl>https://github.com/love2d/love/issues</bugTrackerUrl>
     <tags>love2d lua luajit gamedev game-developement framework 2d admin</tags>
-    <summary>LÖVE is an *awesome* framework you can use to make 2D games in Lua.</summary>
-    <description>LÖVE is an *awesome* framework you can use to make 2D games in Lua. It's free, open-source, and works on Windows, Mac OS X, Linux, Android and iOS.
-LÖVE is totally free, and can be used in anything from friendly open-source hobby projects, to evil, closed-source commercial ones. 
+    <summary>LÃ–VE is an *awesome* framework you can use to make 2D games in Lua.</summary>
+    <description>LÃ–VE is an *awesome* framework you can use to make 2D games in Lua. It's free, open-source, and works on Windows, Mac OS X, Linux, Android and iOS.
+LÃ–VE is totally free, and can be used in anything from friendly open-source hobby projects, to evil, closed-source commercial ones. 
 #### Documentation
 * [Wiki](http://love2d.org/wiki)
 
