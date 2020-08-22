@@ -6,15 +6,15 @@ $nugetUrl="https://dist.nuget.org/win-x86-commandline/v5.8.0-preview.1/nuget.exe
 
 $nugetLoc = Get-ChocolateyWebFile `
   -PackageName "Nuget" `
-  -FileFullPath "$toolsDir\nug.exe" `
+  -FileFullPath "$toolsDir\nuget.exe" `
   -Url $nugetUrl `
   -Checksum "de9bd4de656fedd091ceeb0e14ac918a" `
   -ChecksumType "md5"
 
 if ( $osBitness ){
-  & "$toolsDir\nug.exe" install pythonx86 -Version $version -OutputDirectory "$toolsDir\Python" -Verbosity "quiet"
+  & "$toolsDir\nuget.exe" install pythonx86 -Version $version -OutputDirectory "$toolsDir\Python" -Verbosity "quiet"
 } else {
-  & "$toolsDir\nug.exe" install python -Version $version -OutputDirectory "$toolsDir\Python" -Verbosity "quiet"
+  & "$toolsDir\nuget.exe" install python -Version $version -OutputDirectory "$toolsDir\Python" -Verbosity "quiet"
 }
 
-Remove-Item $toolsDir\nuget1.exe
+Remove-Item $toolsDir\nuget.exe
