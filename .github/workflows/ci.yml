@@ -47,6 +47,7 @@ jobs:
         choco install --no-progress python.portable -source "'.;https://chocolatey.org/api/v2/'"
         cmd.exe /C where python
         choco uninstall python.portable
+        cd ../
         cd love.portable
         choco pack
         choco install --no-progress love.portable -source "'.;https://chocolatey.org/api/v2/'"
