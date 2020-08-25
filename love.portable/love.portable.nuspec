@@ -1,15 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
-    <id>love</id>
-    <version>11.3</version>
-    <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/love</packageSourceUrl>
+    <id>love.portable</id>
+    <version>0.10.2</version>
+    <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/love.portable</packageSourceUrl>
     <owners>naveen521kk</owners>
-    <title>LÖVE - Free 2D Game Engine</title>
+    <title>LÖVE - Free 2D Game Engine (Portable)</title>
     <authors>LOVE Development Team</authors>
     <projectUrl>https://love2d.org</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/love2d/love/extra/nsis/love.ico</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/naveen521kk/au-packages@master/love/love.png</iconUrl>
     <copyright>2006-2020 LOVE Development Team</copyright>
     <licenseUrl>https://github.com/love2d/love/blob/master/license.txt</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
@@ -32,9 +32,6 @@ LÖVE is totally free, and can be used in anything from friendly open-source hob
 **Please Note:** This is an automatically updated package. If you find it is out of date by more than a day or two, please contact the maintainer(s) and let them know the package is no longer updating correctly.
     </description>
     <releaseNotes>https://love2d.org/wiki/11.3</releaseNotes>
-    <dependencies>
-      <dependency id="love.install" version="11.3" />
-    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

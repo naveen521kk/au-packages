@@ -12,8 +12,8 @@ function global:au_GetLatest {
     $stableRelease=$j[$i+1]
     $i=$i+1
   }
-  $regex32 = '.*love-.*-win32.exe'
-  $regex64 = '.*love-.*-win64.exe'
+  $regex32 = '.*love-.*-win32.zip'
+  $regex64 = '.*love-.*-win64.zip'
   foreach ($asset in $stableRelease.assets){
     if (!($url64)){
        $url64   = Select-String -InputObject $asset.browser_download_url -Pattern $regex64
@@ -32,12 +32,21 @@ function global:au_GetLatest {
   $releasenotes=[System.Security.SecurityElement]::Escape($releasenotes)
   return @{ Version = $version; URL64 = $url64; URL32 = $url32;}
 }
+function global:au_BeforeUpdate() {
+  $Latest.Checksum32 = Get-RemoteChecksum $Latest.URL32
+  $Latest.Checksum64 = Get-RemoteChecksum $Latest.URL64
+}
 
 function global:au_SearchReplace {
   @{
-    ".\love.nuspec" = @{
-	  "(?im)(<releaseNotes>)(.*?)(<\/releaseNotes>)"   = "`${1}https://love2d.org/wiki/$($Latest.Version)`${3}"
-      "(?i)(<dependency id=`"love.install`" version=`")(.*?)(`" \/>)"   = "`${1}$($Latest.Version)`${3}"
+    ".\tools\chocolateyinstall.ps1" = @{
+      "(?i)(^\s*Url\s*=\s*)'.*'"                  = "`${1}'$($Latest.URL32)'"
+      "(?i)(^\s*Url64bit\s*=\s*)'.*'"             = "`${1}'$($Latest.URL64)'"
+      "(?i)(^\s*Checksum\s*=\s*)'.*'"             = "`${1}'$($Latest.Checksum32)'"
+      "(?i)(^\s*Checksum64\s*=\s*)'.*'"           = "`${1}'$($Latest.Checksum64)'"
+    }
+    ".\love.portable.nuspec" = @{
+      "(?im)(<releaseNotes>)(.*?)(<\/releaseNotes>)"   = "`${1}https://love2d.org/wiki/$($Latest.Version)`${3}"
     }
   }
 }
