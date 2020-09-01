@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>love.portable</id>
-    <version>0.10.2</version>
+    <version>11.3</version>
     <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/love.portable</packageSourceUrl>
     <owners>naveen521kk</owners>
     <title>LÖVE - Free 2D Game Engine (Portable)</title>
