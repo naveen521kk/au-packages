@@ -1,4 +1,6 @@
 $ErrorActionPreference = 'Stop';
+$toolsPath = Split-Path $MyInvocation.MyCommand.Definition
+. $toolsPath\helpers.ps1
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
   softwareName  = 'love*'
@@ -7,7 +9,8 @@ $packageArgs = @{
   validExitCodes= @(0)
 }
 
-$uninstalled = $false
+
+Uninstall-ChocolateyPath "$($env:SystemDrive)\Program Files\LOVE"
 [array]$key = Get-UninstallRegistryKey -SoftwareName $packageArgs['softwareName']
 
 if ($key.Count -eq 1) {
