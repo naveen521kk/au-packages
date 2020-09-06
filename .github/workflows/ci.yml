@@ -27,6 +27,7 @@ jobs:
         choco pack
         choco install --no-progress travis -source "'.;https://chocolatey.org/api/v2/'"
         choco uninstall travis
+        cd ../
         cd love.portable
         choco pack
         choco install --no-progress love.portable -source "'.;https://chocolatey.org/api/v2/'"
