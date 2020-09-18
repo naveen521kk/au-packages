@@ -9,7 +9,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Get and Upload Packages
+    - name: Test some Packages
       run: |
         cd mysql-python
         choco pack
@@ -33,6 +33,15 @@ jobs:
         choco install --no-progress love.portable -source "'.;https://chocolatey.org/api/v2/'"
         choco uninstall -y love.portable
         cd ../
+    - name: Install Manim and Manim-Tex and test
+      run: |
+        choco install manim
+        cd "manim-latex"
+        choco pack
+        choco install --no-progress manim-latex -source "'.;https://chocolatey.org/api/v2/'"
+        curl -L https://pastebin.com/raw/QcbYFiTz -o tex.py
+        manim tex.py
+        choco uninstall manim-latex
     # Runs a set of commands using the runners shell
     - uses: actions/upload-artifact@v2
       with:

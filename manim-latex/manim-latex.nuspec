@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>manim-latex</id>
+    <version>2020.09</version>
+    <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/manim-latex</packageSourceUrl>
+    <owners>naveen521kk</owners>
+    <title>LaTeX for Manim(Install)</title>
+    <authors>Naveen M K, Yihui Xie, TeX Live Developers</authors>
+    <projectUrl>https://github.com/ManimCommunity/manim</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/ManimCommunity/manim/logo/graph.png</iconUrl>
+    <copyright>Copyright 2020 TeX Live Developers</copyright>
+    <licenseUrl>https://tug.org/texlive/LICENSE.TL</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <docsUrl>https://manimce.readthedocs.io/en/latest/</docsUrl>
+    <!--<mailingListUrl></mailingListUrl>-->
+    <bugTrackerUrl>https://github.com/ManimCommunity/manim/issues</bugTrackerUrl>
+    <tags>manim-latex LaTeX TeX python</tags>
+    <summary>Lightweight and portable LaTeX distribution, just enough for Manim based on TeX Live</summary>
+    <description>
+	This is an extension for [Manim](https://chocolatey.org/packages/manim). This contain LaTeX just enough to run Manim and also lightweight(Around 250MB) and portable.	
+	This package works for both [3b1b's version of Manim](https://github.com/3b1b/manim) and [Community version of Manim](https://github.com/manimcommunity/manim).
+	
+	Note: This is based of [TinyTeX](https://chocolatey.org/packages/tinytex) with extra dependency required for Manim.
+	Please inform maintainers as this is an [automatic package](https://chocolatey.org/docs/automatic-packages).</description>
+    <releaseNotes>https://manimce.readthedocs.io/en/latest/changelog.html</releaseNotes>   
+    <dependencies>
+      <dependency id="tinytex" version="2020.09" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
