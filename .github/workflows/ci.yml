@@ -33,11 +33,12 @@ jobs:
         choco install --no-progress love.portable -source "'.;https://chocolatey.org/api/v2/'"
         choco uninstall -y love.portable
         cd ../
-        choco install manim
+        choco install --no-progress manim
         cd "manim-latex"
         choco pack
         choco install --no-progress manim-latex -source "'.;https://chocolatey.org/api/v2/'"
         cd ../
+        refreshenv
         echo "::set-env name=PATH::$($env:PATH)"
     - name: Install Manim and Manim-Tex and test
       run: |
