@@ -38,7 +38,7 @@ jobs:
         choco pack
         choco install --no-progress manim-latex -source "'.;https://chocolatey.org/api/v2/'"
         cd ../
-        refreshenv
+        $env:PATH="C:\tools\TinyTeX\bin;$env:PATH"
         echo "::set-env name=PATH::$($env:PATH)"
     - name: Install Manim and Manim-Tex and test
       run: |
