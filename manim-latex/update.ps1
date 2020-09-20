@@ -16,5 +16,8 @@ function global:au_GetLatest {
   $version=$version.Substring(1)
   return @{ Version = $version;}
 }
+function global:au_SearchReplace {
+  echo "nothing to do"
+}
 
 update -ChecksumFor none
