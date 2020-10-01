@@ -17,7 +17,11 @@ function global:au_GetLatest {
   return @{ Version = $version;}
 }
 function global:au_SearchReplace {
-  echo "nothing to do"
+  @{
+    ".\manim-latex.nuspec" = @{
+	  "(?im)(<releaseNotes>)(.*?)(<\/releaseNotes>)"   = "`${1}https://manimce.readthedocs.io/en/latest/changelog.html`${3}"
+    }
+}
 }
 
 update -ChecksumFor none
