@@ -46,7 +46,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-         python-version: 3.7
+         python-version: 3.8
     - name: Install Manim
       run: |
         choco install --no-progress manim
@@ -59,6 +59,7 @@ jobs:
     - name: Install Manim and Manim-Tex and test
       run: |
         curl -L https://pastebin.com/raw/QcbYFiTz -o tex.py
+        python -m pip install -i https://test.pypi.org/simple/ -q pycairo
         pip install https://github.com/ManimCommunity/manim/archive/master.zip
         manim tex.py
         choco uninstall manim-latex

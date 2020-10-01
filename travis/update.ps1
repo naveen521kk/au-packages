@@ -4,7 +4,7 @@ $gem_api_url='https://rubygems.org/api/v1/versions/travis/latest.json'
 # Looks like they don'[t publish release in Github so dirctly taking from gem API.
 function global:au_GetLatest {
   $contentFetched = Invoke-WebRequest $gem_api_url | ConvertFrom-Json
-  $version = $stableRelease.version
+  $version = $contentFetched.version
   return @{ Version = $version; }
 }
 
