@@ -1,3 +1,3 @@
 ﻿$ErrorActionPreference = 'Stop';
-$version  =  '1.8.8'
+$version  =  '1.10.0'
 gem install travis -q --silent -v $version
