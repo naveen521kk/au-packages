@@ -19,7 +19,7 @@ function global:au_GetLatest {
 function global:au_SearchReplace {
   @{
     ".\manim-latex.nuspec" = @{
-	  "(?im)(<releaseNotes>)(.*?)(<\/releaseNotes>)"   = "`${1}https://manimce.readthedocs.io/en/latest/changelog.html`${3}"
+	  "(?i)(<dependency id=`"tinytex`" version=`")(.*?)(`" \/>)"   = "`${1}$($Latest.Version)`${3}"
     }
 }
 }

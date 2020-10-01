@@ -5,7 +5,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  test:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
@@ -33,6 +33,22 @@ jobs:
         choco install --no-progress love.portable -source "'.;https://chocolatey.org/api/v2/'"
         choco uninstall -y love.portable
         cd ../
+
+    # Runs a set of commands using the runners shell
+    - uses: actions/upload-artifact@v2
+      with:
+        name: chocologs
+        path: C:\ProgramData\chocolatey\logs\chocolatey.log
+  test-manim-latex:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+    - name: Install Manim
+      run: |
         choco install --no-progress manim
         cd "manim-latex"
         choco pack
@@ -43,10 +59,14 @@ jobs:
     - name: Install Manim and Manim-Tex and test
       run: |
         curl -L https://pastebin.com/raw/QcbYFiTz -o tex.py
+        pip install https://github.com/ManimCommunity/manim/archive/master.zip
         manim tex.py
         choco uninstall manim-latex
-    # Runs a set of commands using the runners shell
     - uses: actions/upload-artifact@v2
       with:
         name: chocologs
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
+    - uses: actions/upload-artifact@v2
+      with:
+        name: mediaManim.zip
+        path: media
