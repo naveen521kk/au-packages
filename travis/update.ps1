@@ -1,16 +1,10 @@
 import-module au
 
-$github_api_url='https://api.github.com/repos/travis-ci/travis.rb/releases'
-
+$gem_api_url='https://rubygems.org/api/v1/versions/travis/latest.json'
+# Looks like they don'[t publish release in Github so dirctly taking from gem API.
 function global:au_GetLatest {
-  $contentFetched = Invoke-WebRequest $github_api_url | ConvertFrom-Json
-  $i=0
-  $stableRelease=$contentFetched[0]
-  while ($contentFetched[$i].prerelease -eq $true){
-    $stableRelease=$j[$i+1]
-    $i=$i+1
-  }
-  $version = $stableRelease.tag_name.Substring(1)
+  $contentFetched = Invoke-WebRequest $gem_api_url | ConvertFrom-Json
+  $version = $stableRelease.version
   return @{ Version = $version; }
 }
 
