@@ -43,10 +43,6 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-         python-version: 3.8
     - name: Install Manim
       run: |
         choco install --no-progress manim
@@ -56,10 +52,14 @@ jobs:
         cd ../
         $env:PATH="C:\tools\TinyTeX\bin\win32;$env:PATH"
         echo "::set-env name=PATH::$($env:PATH)"
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+         python-version: 3.8
     - name: Install Manim and Manim-Tex and test
       run: |
         curl -L https://pastebin.com/raw/QcbYFiTz -o tex.py
-        python -m pip install -i https://test.pypi.org/simple/ -q pycairo
+        pip install -i https://test.pypi.org/simple/ -q pycairo
         pip install https://github.com/ManimCommunity/manim/archive/master.zip
         manim tex.py
         choco uninstall manim-latex
