@@ -70,8 +70,8 @@ jobs:
         name: mediaManim.zip
         path: media
 
-  choco_test:
-    runs-on: windows-latest
+  manim_test:
+    runs-on: windows-2016
 
     steps:
     - uses: actions/checkout@v2
@@ -81,9 +81,11 @@ jobs:
          python-version: 3.8
     - name: Make choco Package
       run: |
-        cd "manim.install"        
+        cd "manim.install"
         choco pack
-        choco install --no-progress manim.install -source "'.;https://chocolatey.org/api/v2/'"
+        choco install ffmpeg
+        choco install python
+        choco install --no-progress manim.install --source "." --version=0.1.0
 
     - name: Test Generated Files
       shell: cmd
