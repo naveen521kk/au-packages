@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
@@ -27,6 +27,9 @@ File any issues at https://github.com/manimcommunity/manim/issues
 **NOTE:** This package ships with the [community version](https://github.com/manimcommunity/manim) of manim, which is different from https://github.com/3b1b/manim, mainly because it is developed by a team of volunteer developers. This software is currently under development and may be out of date, unstable, buggy, or not even run at all when installed.
 
 This **installs** manim using [pip](https://pip.pypa.io/en/stable/) with its dependencies.
+
+**NOTE:** This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+
 </description>
     <dependencies>
       <dependency id="ffmpeg" version="4.2" />

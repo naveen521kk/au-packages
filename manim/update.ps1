@@ -11,13 +11,15 @@ function global:au_GetLatest {
     $i = $i + 1
   }
   $version = $stableRelease.tag_name
+  $version = Get-Version $version
   return @{ Version = $version; }
 }
 
 function global:au_SearchReplace {
   @{
     ".\manim.nuspec" = @{
-      "(?im)(<docsUrl>)(.*?)(<\/docsUrl>)" = "`${1}https://manimce.readthedocs.io/en/v$($Latest.Version)/`${3}"
+      "(?im)(<docsUrl>)(.*?)(<\/docsUrl>)"                             = "`${1}https://manimce.readthedocs.io/en/v$($Latest.Version)/`${3}"
+      "(?i)(<dependency id=`"manim.install`" version=`")(.*?)(`" \/>)" = "`${1}[$($Latest.Version)]`${3}"
     }
   }
 }

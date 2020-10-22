@@ -40,7 +40,7 @@ jobs:
         name: chocologs
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
   test-manim-latex:
-    runs-on: windows-latest
+    runs-on: windows-2016
     steps:
     - uses: actions/checkout@v2
     - name: Install Manim
@@ -59,9 +59,8 @@ jobs:
     - name: Install Manim and Manim-Tex and test
       run: |
         curl -L https://pastebin.com/raw/QcbYFiTz -o tex.py
-        pip install -i https://test.pypi.org/simple/ -q pycairo
         pip install https://github.com/ManimCommunity/manim/archive/master.zip
-        manim tex.py
+        python -m manim tex.py
         choco uninstall manim-latex
     - uses: actions/upload-artifact@v2
       with:
@@ -71,3 +70,38 @@ jobs:
       with:
         name: mediaManim.zip
         path: media
+
+  choco_test:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Make choco Package
+      run: |
+        cd "manim.install"        
+        choco pack
+        choco install --no-progress manim.install -source "'.;https://chocolatey.org/api/v2/'"
+
+    - name: Test Generated Files
+      shell: cmd
+      continue-on-error: true
+      run: |
+        set PATH=C:\tools\pango;%PATH%
+        where libcairo-2.dll
+        manim -h
+        curl -L https://raw.githubusercontent.com/ManimCommunity/manim/master/example_scenes/basic.py -O basic.py
+        manim basic.py SquareToCircle
+        choco uninstall -y manim.install
+
+    - name: Upload Logs if failes
+      uses: actions/upload-artifact@v2
+      if: ${{ failure() }}
+      with:
+        name: chocologs-manim
+        path: C:\ProgramData\chocolatey\logs\chocolatey.log
+    - name: Upload Logs
+      uses: actions/upload-artifact@v2
+      with:
+        name: chocologs-manim
+        path: C:\ProgramData\chocolatey\logs\chocolatey.log
