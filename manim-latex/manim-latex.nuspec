@@ -6,10 +6,10 @@
     <version>2020.10</version>
     <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/manim-latex</packageSourceUrl>
     <owners>naveen521kk</owners>
-    <title>LaTeX for Manim(Install)</title>
+    <title>LaTeX for Manim (Install)</title>
     <authors>Naveen M K, Yihui Xie, TeX Live Developers</authors>
     <projectUrl>https://github.com/ManimCommunity/manim</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/ManimCommunity/manim/logo/graph.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/ManimCommunity/manim/logo/light/transparent_background.png</iconUrl>
     <copyright>Copyright 2020 TeX Live Developers</copyright>
     <licenseUrl>https://tug.org/texlive/LICENSE.TL</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
