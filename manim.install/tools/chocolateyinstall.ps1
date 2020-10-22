@@ -13,5 +13,4 @@ Install-ChocolateyZipPackage `
 Install-ChocolateyPath "$InstallLocation\pango" 'Machine'
 tree $InstallLocation
 $env:PATH="$InstallLocation\pango;$env:PATH"
-python -m pip install --upgrade pip
-python -m pip install "manimce==$version" --force
+python -m pip install "manimce==$version" --force --no-cache
