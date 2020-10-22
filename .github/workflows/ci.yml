@@ -2,7 +2,6 @@ name: Get Latest Version And Publish
 
 on:
   push:
-    branches: [ master ]
 
 jobs:
   test:
