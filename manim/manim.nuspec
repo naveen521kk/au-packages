@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>manim</id>
-    <version>0.0.1</version>
+    <version>0.1.0</version>
     <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/manim</packageSourceUrl>
     <owners>naveen521kk</owners>
     <title>ManimCE</title>
@@ -13,7 +13,7 @@
     <licenseUrl>https://github.com/ManimCommunity/manim/blob/master/LICENSE.community</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/ManimCommunity/manim</projectSourceUrl>
-    <docsUrl>https://manimce.readthedocs.io/en/stable/</docsUrl>
+    <docsUrl>https://manimce.readthedocs.io/en/v0.1.0/</docsUrl>
     <bugTrackerUrl>https://github.com/ManimCommunity/manim/issues</bugTrackerUrl>
     <tags>manim python animation math</tags>
     <summary>Animation engine for explanatory math videos.</summary>
@@ -28,7 +28,7 @@ NOTE: This package ships with the [community version](https://github.com/manimco
 **NOTE:** This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
     </description>
     <dependencies>
-      <dependency id="manim.install" version="[1.0.20201012]" />
+      <dependency id="manim.install" version="[0.1.0]" />
     </dependencies>
   </metadata>
   <files>

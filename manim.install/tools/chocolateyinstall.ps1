@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop';
 $InstallLocation = Get-ToolsLocation
-$version = '0.0.1'
+$version = '0.1.0'
 Install-ChocolateyZipPackage `
   -PackageName "Pango Binaries" `
   -Url "https://github.com/ManimCommunity/pango-windows-binaries/releases/download/v0.1.0/pango-windows-binaires-x86.zip" `
