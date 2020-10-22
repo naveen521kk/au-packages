@@ -78,13 +78,13 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-         python-version: 3.8
+         python-version: "3.8.5"
     - name: Make choco Package
       run: |
         cd "manim.install"
         choco pack
         choco install --no-progress ffmpeg
-        choco install --no-progress python
+        choco install --no-progress python --version=3.8.5
         choco install --no-progress manim.install --source "." --version=0.1.0
 
     - name: Test Generated Files
