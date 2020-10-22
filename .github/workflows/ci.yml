@@ -83,8 +83,8 @@ jobs:
       run: |
         cd "manim.install"
         choco pack
-        choco install ffmpeg
-        choco install python
+        choco install --no-progress ffmpeg
+        choco install --no-progress python
         choco install --no-progress manim.install --source "." --version=0.1.0
 
     - name: Test Generated Files
