@@ -96,7 +96,7 @@ jobs:
         manim -h
         curl -L https://raw.githubusercontent.com/ManimCommunity/manim/master/example_scenes/basic.py -O basic.py
         manim basic.py SquareToCircle
-        choco uninstall -y manim.install
+        choco uninstall -y manimce
 
     - name: Upload Logs if failes
       uses: actions/upload-artifact@v2
