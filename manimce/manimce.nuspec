@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>manimce</id>
+    <version>0.0.1</version>
+    <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/manimce</packageSourceUrl>
+    <owners>naveen521kk</owners>
+    <title>ManimCE Install</title>
+    <authors>Manim Contributors</authors>
+    <projectUrl>https://github.com/manimcommunity/manim</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/ManimCommunity/manim/logo/light/transparent_background.png</iconUrl>
+    <copyright>© Manim Contributors 2020</copyright>
+    <licenseUrl>https://github.com/ManimCommunity/manim/blob/master/LICENSE.community</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>    
+	  <projectSourceUrl>https://github.com/ManimCommunity/manim</projectSourceUrl>
+    <docsUrl>https://manimce.readthedocs.io/en/v0.1.0/</docsUrl>
+    <bugTrackerUrl>https://github.com/ManimCommunity/manim/issues</bugTrackerUrl>
+    <tags>manim python animation math</tags>
+    <summary>Animation engine for explanatory math videos.</summary>
+    <description>Manim is an animation engine written in Python primarily used to create explanatory math videos such as those of [3Blue1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw). It allows for the creation of precise animations programmatically. For more info, [see the GitHub repo](https://github.com/manimcommunity/manim).
+
+This package aims to simplify the historically painful process of setting up Manim on Windows, by including with it Python 3.8.3, ffmpeg, pycairo and sox. After installation you can execute your animation scripts with manim &lt;file&gt;.py.
+
+File any issues at https://github.com/manimcommunity/manim/issues
+
+**NOTE:** This package ships with the [community version](https://github.com/manimcommunity/manim) of manim, which is different from https://github.com/3b1b/manim, mainly because it is developed by a team of volunteer developers. This software is currently under development and may be out of date, unstable, buggy, or not even run at all when installed.
+
+This **installs** manim using [pip](https://pip.pypa.io/en/stable/) with its dependencies.
+
+**NOTE:** This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+
+</description>
+    <dependencies>
+      <dependency id="ffmpeg" version="4.2" />
+      <dependency id="python" version="[3.7, 3.9)" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
-    <id>manim.install</id>
+    <id>manim</id>
     <version>1.0.20201022</version>
-    <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/manim.install</packageSourceUrl>
+    <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/deprecated/manim</packageSourceUrl>
     <owners>naveen521kk</owners>
-    <title>[Deprecated] ManimCE Install</title>
+    <title>[Deprecated] ManimCE</title>
     <authors>Manim Contributors</authors>
     <projectUrl>https://github.com/manimcommunity/manim</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/ManimCommunity/manim/logo/light/transparent_background.png</iconUrl>
     <copyright>© Manim Contributors 2020</copyright>
     <licenseUrl>https://github.com/ManimCommunity/manim/blob/master/LICENSE.community</licenseUrl>
-    <requireLicenseAcceptance>true</requireLicenseAcceptance>    
-	  <projectSourceUrl>https://github.com/ManimCommunity/manim</projectSourceUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/ManimCommunity/manim</projectSourceUrl>
     <docsUrl>https://manimce.readthedocs.io/en/v0.1.0/</docsUrl>
     <bugTrackerUrl>https://github.com/ManimCommunity/manim/issues</bugTrackerUrl>
     <tags>manim python animation math</tags>
@@ -27,18 +25,14 @@ This package aims to simplify the historically painful process of setting up Man
 
 File any issues at https://github.com/manimcommunity/manim/issues
 
-**NOTE:** This package ships with the [community version](https://github.com/manimcommunity/manim) of manim, which is different from https://github.com/3b1b/manim, mainly because it is developed by a team of volunteer developers. This software is currently under development and may be out of date, unstable, buggy, or not even run at all when installed.
-
-This **installs** manim using [pip](https://pip.pypa.io/en/stable/) with its dependencies.
+NOTE: This package ships with the [community version](https://github.com/manimcommunity/manim) of manim, which is different from https://github.com/3b1b/manim, mainly because it is developed by a team of volunteer developers. This software is currently under development and may be out of date, unstable, buggy, or not even run at all when installed.
 
 **NOTE:** This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 
-</description>
+    </description>
     <dependencies>
-      <dependency id="manimce"/>
+      <dependency id="manimce" />
     </dependencies>
   </metadata>
-  <files>
-    <file src="tools\**" target="tools" />
-  </files>
+  <files />
 </package>
