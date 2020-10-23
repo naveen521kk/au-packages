@@ -2,7 +2,6 @@ name: Get Latest Version And Publish
 
 on:
   push:
-    branches: [ master ]
 
 jobs:
   test:
@@ -71,17 +70,22 @@ jobs:
         name: mediaManim.zip
         path: media
 
-  choco_test:
-    runs-on: windows-latest
+  manim_test:
+    runs-on: windows-2016
 
     steps:
     - uses: actions/checkout@v2
-
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+         python-version: "3.8.5"
     - name: Make choco Package
       run: |
-        cd "manim.install"        
+        cd "manim.install"
         choco pack
-        choco install --no-progress manim.install -source "'.;https://chocolatey.org/api/v2/'"
+        choco install --no-progress ffmpeg
+        choco install --no-progress python --version=3.8.5
+        choco install --no-progress manim.install --source "." --version=0.1.0
 
     - name: Test Generated Files
       shell: cmd

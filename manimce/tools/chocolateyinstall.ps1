@@ -1,4 +1,4 @@
-﻿$ErrorActionPreference = 'Stop';
+﻿﻿$ErrorActionPreference = 'stop';
 $InstallLocation = Get-ToolsLocation
 $version = '0.1.0'
 Install-ChocolateyZipPackage `
@@ -12,4 +12,4 @@ Install-ChocolateyZipPackage `
   -ChecksumType64 "SHA256"
 Install-ChocolateyPath "$InstallLocation\pango" 'Machine'
 python -m pip install --upgrade pip
-python -m pip install -q "manimce==$version"
+python -m pip install "manimce==$version" --force --no-cache
