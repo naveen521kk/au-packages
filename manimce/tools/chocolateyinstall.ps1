@@ -1,4 +1,4 @@
-﻿﻿$ErrorActionPreference = 'stop';
+﻿﻿﻿$ErrorActionPreference = 'stop';
 $InstallLocation = Get-ToolsLocation
 $version = '0.1.0'
 Install-ChocolateyZipPackage `
