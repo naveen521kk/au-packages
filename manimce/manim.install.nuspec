@@ -3,10 +3,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>manim.install</id>
-    <version>1.0.20201022</version>
+    <version>0.0.1</version>
     <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/manim.install</packageSourceUrl>
     <owners>naveen521kk</owners>
-    <title>[Deprecated] ManimCE Install</title>
+    <title>ManimCE Install</title>
     <authors>Manim Contributors</authors>
     <projectUrl>https://github.com/manimcommunity/manim</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/ManimCommunity/manim/logo/light/transparent_background.png</iconUrl>
@@ -18,10 +18,7 @@
     <bugTrackerUrl>https://github.com/ManimCommunity/manim/issues</bugTrackerUrl>
     <tags>manim python animation math</tags>
     <summary>Animation engine for explanatory math videos.</summary>
-    <description>
-Due to a version change this package is Deprecated. Use `manimce` instead.
-
-Manim is an animation engine written in Python primarily used to create explanatory math videos such as those of [3Blue1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw). It allows for the creation of precise animations programmatically. For more info, [see the GitHub repo](https://github.com/manimcommunity/manim).
+    <description>Manim is an animation engine written in Python primarily used to create explanatory math videos such as those of [3Blue1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw). It allows for the creation of precise animations programmatically. For more info, [see the GitHub repo](https://github.com/manimcommunity/manim).
 
 This package aims to simplify the historically painful process of setting up Manim on Windows, by including with it Python 3.8.3, ffmpeg, pycairo and sox. After installation you can execute your animation scripts with manim &lt;file&gt;.py.
 
@@ -35,7 +32,8 @@ This **installs** manim using [pip](https://pip.pypa.io/en/stable/) with its dep
 
 </description>
     <dependencies>
-      <dependency id="manimce"/>
+      <dependency id="ffmpeg" version="4.2" />
+      <dependency id="python" version="[3.7, 3.9)" />
     </dependencies>
   </metadata>
   <files>
