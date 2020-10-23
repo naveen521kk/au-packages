@@ -85,7 +85,7 @@ jobs:
         choco pack
         choco install --no-progress ffmpeg
         choco install --no-progress python --version=3.8.5
-        choco install --no-progress manimce --source "." --version=0.1.0
+        choco install --no-progress manimce --source "."
 
     - name: Test Generated Files
       shell: cmd
