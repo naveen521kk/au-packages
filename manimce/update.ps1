@@ -18,7 +18,7 @@ function global:au_GetLatest {
 function global:au_SearchReplace {
   @{
     ".\manimce.nuspec"        = @{
-      "(?im)(<docsUrl>)(.*?)(<\/docsUrl>)" = "`${1}https://manimce.readthedocs.io/en/v$($Latest.Version)`${3}"
+      "(?im)(<docsUrl>)(.*?)(<\/docsUrl>)" = "`${1}https://docs.manim.community/en/v$($Latest.Version)`${3}"
     }
     ".\tools\chocolateyinstall.ps1" = @{
       "(?i)(^.*version\s*=\s*)'.*'" = "`${1}'$($Latest.Version)'"
