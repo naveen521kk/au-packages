@@ -19,6 +19,7 @@ $install = @{
   "python"=$python
   "sitePackageFolder" = $sitePackageFolder
 }  | ConvertTo-Json
+New-Item -ItemType Directory -Force -Path "$InstallLocation\Manim"
 New-Item "$InstallLocation\Manim\installInfo.json" -ItemType file -Value $install #save install info
 
 Write-Host "Upgrading PIP and install Wheel" -ForegroundColor Yellow
