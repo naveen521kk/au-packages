@@ -14,7 +14,7 @@ Install-ChocolateyZipPackage `
 Install-ChocolateyPath "$InstallLocation\pango" 'Machine'
 $python = (Get-Command python).source #to lock over specific python version
 $sitePackageFolder = & $python -m site --user-site
-
+Write-Host "Using python version $(python --version --version)" -ForegroundColor Red
 $install = @{
   "python"=$python
   "sitePackageFolder" = $sitePackageFolder
@@ -31,6 +31,7 @@ Write-Host "Installing Manim to $InstallLocation\Manim"
 & "$python" -m pip install "manimce==$version" --force --no-cache --compile --prefix="$InstallLocation\Manim" --no-warn-script-location --log="pip.log"
 
 Write-Host "Making $python detect the Manim"
+New-Item -ItemType Directory -Force -Path "$sitePackageFolder"
 $pthFilePath = "$sitePackageFolder\manimce.pth"
 $pthFileContent = "$InstallLocation\Manim\Lib\site-packages"
 $Utf8NoBomEncoding = New-Object System.Text.UTF8Encoding $False
