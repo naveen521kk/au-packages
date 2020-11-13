@@ -30,7 +30,7 @@ Write-Host "Preparing Install" -ForegroundColor Yellow
 $env:PATH="$InstallLocation\pango;$env:PATH"
 Write-Host "Installing Manim to $InstallLocation\Manim"
 & "$python" -m pip install "manimce==$version" --force --no-cache --compile --prefix="$InstallLocation\Manim" --no-warn-script-location --log="pip.log"
-& "$python" -m pip install pangocairocffi pangocffi --force --no-cache --no-binary :all: --prefix="$InstallLocation\Manim"
+& "$python" -m pip install pangocairocffi<=0.4.0 pangocffi<0.7.0 --force --no-cache --no-binary :all: --prefix="$InstallLocation\Manim"
 
 Write-Host "Making $python detect the Manim"
 New-Item -ItemType Directory -Force -Path "$sitePackageFolder"
