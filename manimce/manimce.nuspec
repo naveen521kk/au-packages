@@ -13,12 +13,12 @@
     <copyright>© Manim Contributors 2020</copyright>
     <licenseUrl>https://github.com/ManimCommunity/manim/blob/master/LICENSE.community</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>    
-	<projectSourceUrl>https://github.com/ManimCommunity/manim</projectSourceUrl>
+	  <projectSourceUrl>https://github.com/ManimCommunity/manim</projectSourceUrl>
     <docsUrl>https://docs.manim.community/en/v0.1.0</docsUrl>
     <bugTrackerUrl>https://github.com/ManimCommunity/manim/issues</bugTrackerUrl>
     <tags>manim python animation math</tags>
     <summary>Animation engine for explanatory math videos.</summary>
-	<releaseNotes>https://docs.manim.community/en/stable/changelog.html</releaseNotes>
+	  <releaseNotes>https://docs.manim.community/en/stable/changelog.html</releaseNotes>
     <description>Manim is an animation engine written in Python primarily used to create explanatory math videos such as those of [3Blue1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw). It allows for the creation of precise animations programmatically. For more info, [see the GitHub repo](https://github.com/manimcommunity/manim).
 
 This package aims to simplify the historically painful process of setting up Manim on Windows, by including with it Python 3.8.3, ffmpeg, pycairo and sox. After installation you can execute your animation scripts with manim &lt;file&gt;.py.

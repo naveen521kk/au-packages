@@ -3,5 +3,13 @@ $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 $InstallLocation = Get-ToolsLocation
 . $toolsPath\helper.ps1
 Uninstall-ChocolateyPath "$InstallLocation\pango"
-python -m pip uninstall -y -q manimce
-
+$installInfo = Get-Content "installInfo.json" | ConvertFrom-JSON
+Uninstall-BinFile `
+  -Name "manim" `
+  -Path "manim.exe"
+Uninstall-BinFile `
+  -Name "manimcm" `
+  -Path "manimcm.exe"
+Remove-Item `
+  -Path "$($installInfo.sitePackageFolder)\manimce.pth" `
+  -Force
