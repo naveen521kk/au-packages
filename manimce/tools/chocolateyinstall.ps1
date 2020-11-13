@@ -21,14 +21,14 @@ $install = @{
 }  | ConvertTo-Json
 New-Item "$toolsDir\installInfo.json" -ItemType file -Value $install #save install info
 
-Write-Host "Upgrading PIP" -ForegroundColor Yellow
-& "$python" -m pip install --upgrade pip
+Write-Host "Upgrading PIP and install Wheel" -ForegroundColor Yellow
+& "$python" -m pip install --upgrade pip wheel
 Write-Host "Preparing Install" -ForegroundColor Yellow
 & "$python" "$toolsDir\loadfiles.py" "$InstallLocation\pango"
 
 $env:PATH="$InstallLocation\pango;$env:PATH"
 Write-Host "Installing Manim to $InstallLocation\Manim"
-& "$python" -m pip install "manimce==$version" --force --no-cache --compile --prefix="$InstallLocation\Manim" --no-warn-script-location
+& "$python" -m pip install "manimce==$version" --force --no-cache --compile --prefix="$InstallLocation\Manim" --no-warn-script-location --log="pip.log"
 
 Write-Host "Making $python detect the Manim"
 $pthFilePath = "$sitePackageFolder\manimce.pth"
