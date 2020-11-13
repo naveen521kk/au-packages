@@ -4,7 +4,7 @@ from pathlib import Path
 import os
 import logging
 
-log_file=Path(__file__) / "load_dll.log"
+log_file=Path(__file__).parent / "load_dll.log"
 logging.basicConfig(format="%(levelname)s - %(message)s",filename=str(log_file), level=logging.DEBUG)
 parser = argparse.ArgumentParser()
 parser.add_argument("dll_location",help="The folder which contains the dll files to load.")
