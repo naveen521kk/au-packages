@@ -49,14 +49,15 @@ jobs:
         choco pack
         choco install --no-progress manim-latex -source "'.;https://chocolatey.org/api/v2/'"
         cd ../
-        $env:PATH="C:\tools\TinyTeX\bin\win32;$env:PATH"
-        echo "::set-env name=PATH::$($env:PATH)"
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
          python-version: 3.8
     - name: Install Manim and Manim-Tex and test
       run: |
+        $env:PATH="C:\tools\pango;%PATH%"
+        $env:PATH="C:\tools\TinyTeX\bin\win32;$env:PATH"
         curl -L https://pastebin.com/raw/QcbYFiTz -o tex.py
         pip install https://github.com/ManimCommunity/manim/archive/master.zip
         python -m pip install pangocffi<0.7.0 --force --no-binary :all: --no-cache
