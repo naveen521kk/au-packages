@@ -44,7 +44,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install Manim
       run: |
-        choco install --no-progress manim
+        choco install --no-progress manimce
         cd "manim-latex"
         choco pack
         choco install --no-progress manim-latex -source "'.;https://chocolatey.org/api/v2/'"
@@ -59,6 +59,8 @@ jobs:
       run: |
         curl -L https://pastebin.com/raw/QcbYFiTz -o tex.py
         pip install https://github.com/ManimCommunity/manim/archive/master.zip
+        python -m pip install pangocffi<0.7.0 --force --no-binary :all: --no-cache
+        python -m pip install pangocairocffi<0.4.0 --force --no-binary :all: --no-cache
         python -m manim tex.py
         choco uninstall manim-latex
     - uses: actions/upload-artifact@v2
