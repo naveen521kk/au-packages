@@ -18,10 +18,10 @@ function global:au_GetLatest {
 function global:au_SearchReplace {
   @{
     ".\manimce.nuspec"        = @{
-      "(?im)(<docsUrl>)(.*?)(<\/docsUrl>)" = "`${1}https://docs.manim.community/en/v$($Latest.Version)`${3}"
+      "(?im)(<docsUrl>)(.*?)(<\/docsUrl>)" = "`${1}https://docs.manim.community/en/v$(($Latest.Version -split '\.')[0,1,2] -join '.')`${3}"
     }
     ".\tools\chocolateyinstall.ps1" = @{
-      "(?i)(^.*version\s*=\s*)'.*'" = "`${1}'$($Latest.Version)'"
+      "(?i)(^.*version\s*=\s*)'.*'" = "`${1}'$(($Latest.Version -split '\.')[0,1,2] -join '.')'"
     }
   }
 }
