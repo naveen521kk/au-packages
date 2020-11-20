@@ -13,7 +13,7 @@ Install-ChocolateyZipPackage `
   -ChecksumType64 "SHA256"
 Install-ChocolateyPath "$InstallLocation\pango" 'Machine'
 $python = (Get-Command python).source #to lock over specific python version
-$sitePackageFolder = & "$python" -m site --user-site
+$sitePackageFolder = cmd.exe /C "`"$python`" -m site --user-site"
 Write-Host "Using python version $(python --version --version)" -ForegroundColor Red
 $install = @{
   "python"=$python
