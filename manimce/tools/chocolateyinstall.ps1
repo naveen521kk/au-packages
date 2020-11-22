@@ -13,21 +13,23 @@ Install-ChocolateyZipPackage `
   -ChecksumType64 "SHA256"
 Install-ChocolateyPath "$InstallLocation\pango" 'Machine'
 $python = (Get-Command python).source #to lock over specific python version
-$sitePackageFolder = cmd.exe /C "`"$python`" -m site --user-site"
+Write-Host "Found python at '$python' using it."
 Write-Host "Using python version $(python --version --version)" -ForegroundColor Red
+$sitePackageFolder = cmd.exe /C "`"$python`" -m site --user-site"
+New-Item -ItemType Directory -Force -Path "$sitePackageFolder"
 $install = @{
-  "python"=$python
+  "python"            = $python
   "sitePackageFolder" = $sitePackageFolder
 }  | ConvertTo-Json
 New-Item -ItemType Directory -Force -Path "$InstallLocation\Manim"
 New-Item "$InstallLocation\Manim\installInfo.json" -ItemType file -Value $install #save install info
 
-Write-Host "Upgrading PIP and install Wheel" -ForegroundColor Yellow
+Write-Host "Upgrading pip and install Wheel" -ForegroundColor Yellow
 & "$python" -m pip install --upgrade pip wheel
 Write-Host "Preparing Install" -ForegroundColor Yellow
 & "$python" "$toolsDir\loadfiles.py" "$InstallLocation\pango"
 
-$env:PATH="$InstallLocation\pango;$env:PATH"
+$env:PATH = "$InstallLocation\pango;$env:PATH"
 Write-Host "Installing Manim to $InstallLocation\Manim"
 & "$python" -m pip install cffi --no-cache
 & "$python" -m pip install pangocffi<0.7.0 --no-cache --no-binary :all:
