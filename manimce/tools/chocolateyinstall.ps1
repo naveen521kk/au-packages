@@ -12,7 +12,8 @@ Install-ChocolateyZipPackage `
   -Checksum64 "599E10248B90C408C95AA3429A4DBC4137702242BDDE919A417471E38B100802" `
   -ChecksumType64 "SHA256"
 Install-ChocolateyPath "$InstallLocation\pango" 'Machine'
-$python = (Get-Command python).source #to lock over specific python version
+#$python = (Get-Command python).source #to lock over specific python version
+$python = (cmd.exe /C "where python")[0] #support powershell 4 as it has different syntax for above one
 Write-Host "Found python at '$python' using it."
 Write-Host "Using python version $(python --version --version)" -ForegroundColor Red
 $sitePackageFolder = cmd.exe /C "`"$python`" -m site --user-site"
