@@ -1,8 +1,8 @@
 import argparse
 import ctypes
-from pathlib import Path
-import os
 import logging
+import os
+from pathlib import Path
 
 log_file = Path(__file__).parent / "load_dll.log"
 logging.basicConfig(
@@ -19,19 +19,18 @@ dll_location = Path(args.dll_location)
 logging.debug(f"Adding {dll_location.absolute()} to PATH varible.")
 os.environ["PATH"] = f"{dll_location.absolute()}{os.pathsep}{os.environ['PATH']}"
 
-# necessary_files = ["libglib-2.0-0.dll","libcairo-2.dll","zlib1.dll","libffi-7.dll"]
 # cairo deps here
 necessary_files = [
-    "ZLIB1.DLL",  #
-    "LIBPNG16-16.DLL",  #
-    "LIBPIXMAN-1-0.DLL",  #
+    "ZLIB1.DLL",
+    "LIBPNG16-16.DLL",
+    "LIBPIXMAN-1-0.DLL",
     "LIBWINPTHREAD-1.DLL",
-    "LIBGCC_S_SEH-1.DLL",  #
-    "LIBSSP-0.DLL",  #
+    "LIBGCC_S_SEH-1.DLL",
+    "LIBSSP-0.DLL",
     "LIBINTL-8.DLL",
     "LIBICONV-2.DLL",
     "LIBEXPAT-1.DLL",
-    "LIBFONTCONFIG-1.DLL",  #
+    "LIBFONTCONFIG-1.DLL",
     "LIBBROTLICOMMON.DLL",
     "LIBBROTLIDEC.DLL",
     "LIBBZ2-1.DLL",
