@@ -74,7 +74,8 @@ jobs:
         path: media
 
   manim_test:
-    runs-on: windows-2016
+    runs-on: ubuntu-latest
+    container: mcr.microsoft.com/windows
 
     steps:
     - uses: actions/checkout@v2
@@ -82,10 +83,7 @@ jobs:
       run: |
         choco install --no-progress ffmpeg
         choco install --no-progress python --version=3.8
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-         python-version: 3.8
+
     - name: Make choco Package
       run: |
         cd "manimce"
