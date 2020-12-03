@@ -81,16 +81,15 @@ jobs:
     - name: Install Manim Dependency Manually
       run: |
         choco install --no-progress ffmpeg
-        choco install --no-progress python --version=3.9
+        choco install --no-progress python --version=3.8
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-         python-version: 3.9
+         python-version: 3.8
     - name: Make choco Package
       run: |
         cd "manimce"
         choco pack
-        $env:PATH="C:\hostedtoolcache\windows\Python\3.9.0\x64;$env:PATH"
         choco install --no-progress manimce --source "."
 
     - name: Test Generated Files
