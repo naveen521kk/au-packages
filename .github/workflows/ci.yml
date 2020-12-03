@@ -78,20 +78,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Install Manim Dependency Manually
-      run: |
-        choco install --no-progress ffmpeg
-        choco install --no-progress python --version=3.8.5
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-         python-version: 3.8.5
+         python-version: "3.8.5"
     - name: Make choco Package
       run: |
         cd "manimce"
         choco pack
+        choco install --no-progress ffmpeg
+        choco install --no-progress python --version=3.8.5
         choco install --no-progress manimce --source "."
-
     - name: Test Generated Files
       shell: cmd
       continue-on-error: true
@@ -104,7 +101,6 @@ jobs:
         curl -L https://raw.githubusercontent.com/ManimCommunity/manim/master/example_scenes/basic.py -O basic.py
         manim basic.py SquareToCircle
         choco uninstall -y manimce
-
     - name: Upload Logs if failes
       uses: actions/upload-artifact@v2
       if: ${{ failure() }}
