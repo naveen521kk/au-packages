@@ -51,17 +51,17 @@ New-Item "$toolsDir\manim.bat" -ItemType file -Value "`@echo off
 `"$python`" `"$toolsDir\loadfiles.py`" `"$InstallLocation\pango`"
 `"$InstallLocation\Manim\Scripts\manim.exe`" %*"
 
-New-Item "$toolsDir\manimcm.bat" -ItemType file -Value "`@echo off
+New-Item "$toolsDir\manimce.bat" -ItemType file -Value "`@echo off
 `"$python`" `"$toolsDir\loadfiles.py`" `"$InstallLocation\pango`"
-`"$InstallLocation\Manim\Scripts\manimcm.exe`" %*"
+`"$InstallLocation\Manim\Scripts\manimce.exe`" %*"
 
 Install-BinFile `
   -Name "manim" `
   -Path "$toolsDir\manim.bat"
 
 Install-BinFile `
-  -Name "manimcm" `
-  -Path "$toolsDir\manimcm.bat"
+  -Name "manimce" `
+  -Path "$toolsDir\manimce.bat"
 
 $files = get-childitem $InstallLocation -include *.exe -recurse
 foreach ($file in $files) {
