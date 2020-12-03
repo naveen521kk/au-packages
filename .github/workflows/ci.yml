@@ -74,7 +74,7 @@ jobs:
         path: media
 
   manim_test:
-    runs-on: windows-2016
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -90,6 +90,7 @@ jobs:
       run: |
         cd "manimce"
         choco pack
+        $env:PATH="C:\hostedtoolcache\windows\Python\3.9.0\x64;$env:PATH"
         choco install --no-progress manimce --source "."
 
     - name: Test Generated Files
