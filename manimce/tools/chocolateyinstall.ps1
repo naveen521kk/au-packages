@@ -29,6 +29,10 @@ New-Item "$InstallLocation\Manim\installInfo.json" -ItemType file -Value $instal
 
 Write-Host "Upgrading pip and install Wheel" -ForegroundColor Yellow
 & "$python" -m pip install --upgrade pip wheel
+
+Write-Host "Install Numpy v1.19.3 to avoid problems"
+& "$python" -m pip install --upgrade numpy==1.19.3
+
 Write-Host "Preparing Install" -ForegroundColor Yellow
 & "$python" "$toolsDir\loadfiles.py" "$InstallLocation\pango"
 
