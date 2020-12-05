@@ -50,13 +50,15 @@ $pthFileContent = "$InstallLocation\Manim\Lib\site-packages"
 $Utf8NoBomEncoding = New-Object System.Text.UTF8Encoding $False
 [System.IO.File]::WriteAllLines($pthFilePath, $pthFileContent, $Utf8NoBomEncoding)
 
+Copy-Item "$toolsDir\loadfiles.py" -Destination "$InstallLocation\Manim" -Force
+
 Write-Host "Create a Batch File for Running Manim"
 New-Item "$toolsDir\manim.bat" -ItemType file -Value "`@echo off
-`"$python`" `"$toolsDir\loadfiles.py`" `"$InstallLocation\pango`"
+`"$python`" `"$InstallLocation\Manim\loadfiles.py`" `"$InstallLocation\pango`"
 `"$InstallLocation\Manim\Scripts\manim.exe`" %*"
 
 New-Item "$toolsDir\manimce.bat" -ItemType file -Value "`@echo off
-`"$python`" `"$toolsDir\loadfiles.py`" `"$InstallLocation\pango`"
+`"$python`" `"$InstallLocation\Manim\loadfiles.py`" `"$InstallLocation\pango`"
 `"$InstallLocation\Manim\Scripts\manimce.exe`" %*"
 
 Install-BinFile `
