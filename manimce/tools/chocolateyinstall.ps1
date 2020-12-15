@@ -41,7 +41,7 @@ Write-Host "Installing Manim to $InstallLocation\Manim"
 & "$python" -m pip install cffi --no-cache
 & "$python" -m pip install pangocffi<0.7.0 --no-cache --no-binary :all:
 & "$python" -m pip install pangocairocffi<0.4.0 --no-cache --no-binary :all:
-& "$python" -m pip install "manimce==$version" --no-cache --compile --prefix="$InstallLocation\Manim" --no-warn-script-location --log="pip.log"
+& "$python" -m pip install "manim==$version" --no-cache --compile --prefix="$InstallLocation\Manim" --no-warn-script-location --log="pip.log"
 
 Write-Host "Making $python detect the Manim"
 New-Item -ItemType Directory -Force -Path "$sitePackageFolder"
