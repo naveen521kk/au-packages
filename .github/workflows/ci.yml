@@ -33,6 +33,9 @@ jobs:
         choco uninstall -y love.portable
         cd ../
         cd scc
+        $au_Push=$false
+        $env:au_Push = $false
+        ./update
         choco pack
         choco install --no-progress scc -source "'.;https://chocolatey.org/api/v2/'"
         choco uninstall scc
