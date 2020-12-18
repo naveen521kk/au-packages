@@ -32,7 +32,11 @@ jobs:
         choco install --no-progress love.portable -source "'.;https://chocolatey.org/api/v2/'"
         choco uninstall -y love.portable
         cd ../
-
+        cd scc
+        choco pack
+        choco install --no-progress scc -source "'.;https://chocolatey.org/api/v2/'"
+        choco uninstall scc
+        cd ../
     # Runs a set of commands using the runners shell
     - uses: actions/upload-artifact@v2
       with:

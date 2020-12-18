@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>scc</id>
+    <version>0.0.1</version>
+    <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/scc</packageSourceUrl>
+    <owners>naveen521kk</owners>
+    <title>Sloc Cloc and Code (scc)</title>
+    <authors>Ben Boyter + Contributors</authors>
+    <projectUrl>https://github.com/boyter/scc</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/naveen521kk/au-packages/icons/scc.png</iconUrl>
+    <copyright>2018 Ben Boyter</copyright>
+    <licenseUrl>https://github.com/boyter/scc/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/boyter/scc</projectSourceUrl>
+    <docsUrl>https://github.com/boyter/scc/blob/master/README.md</docsUrl>
+    <bugTrackerUrl>https://github.com/boyter/scc/issues</bugTrackerUrl>
+    <tags>scc cli code complexity sloc golang statistics</tags>
+    <summary>Sloc, Cloc and Code: scc is a very fast accurate code counter with complexity calculations and COCOMO estimates written in pure Go </summary>
+    <description>
+	## Sloc Cloc and Code (scc)
+	A tool similar to cloc, sloccount and tokei. For counting physical the lines of code, blank lines, comment lines, and physical lines of source code in many programming languages.
+
+	Goal is to be the fastest code counter possible, but also perform COCOMO calculation like sloccount and to estimate code complexity similar to cyclomatic complexity calculators. In short one tool to rule them all.
+
+	Also it has a very short name which is easy to type scc.
+	
+	**Please Note:** This is an automatically updated package. If you find it is out of date by more than a day or two, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+	</description>
+    <releaseNotes>https://github.com/boyter/scc/releases</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
