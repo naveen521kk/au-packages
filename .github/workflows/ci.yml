@@ -36,7 +36,37 @@ jobs:
         $au_Push=$false
         $env:au_Push = $false
         choco install au
-        ./update -Force
+        function download_scc {
+          $contentFetched = Invoke-WebRequest $github_api_url | ConvertFrom-Json
+          $i = 0
+          $stableRelease = $contentFetched[0]
+          while ($contentFetched[$i].prerelease -eq $true) {
+            $stableRelease = $j[$i + 1]
+            $i = $i + 1
+          }
+          $regex32 = '.*scc-.*-i386-pc-windows.zip'
+          $regex64 = '.*scc-.*-x86_64-pc-windows.zip'
+          foreach ($asset in $stableRelease.assets) {
+            if (!($url64)) {
+              $url64 = Select-String -InputObject $asset.browser_download_url -Pattern $regex64
+              $id64 = $asset.id
+            }
+            if (!($url32)) {
+              $url32 = Select-String -InputObject $asset.browser_download_url -Pattern $regex32
+              $id32 = $asset.id
+            }
+            if ($url64 -and $url32) {
+              break
+            }
+          }
+          $version = $stableRelease.tag_name
+          $version = Get-Version $version
+          $url32 = $url32.ToString()
+          $url64 = $url64.ToString()
+          curl -L $url64 -o tools\scc-2.13.0-x86_64-pc-windows.zip
+          return @{ Version = $version; URL64 = $url64; URL32 = $url32; }
+        }
+        download_scc
         choco pack
         choco install --no-progress scc -source "'.;https://chocolatey.org/api/v2/'"
         choco uninstall scc
