@@ -36,6 +36,7 @@ jobs:
         $au_Push=$false
         $env:au_Push = $false
         choco install au
+        github_api_url = 'https://api.github.com/repos/boyter/scc/releases'
         function download_scc {
           $contentFetched = Invoke-WebRequest $github_api_url | ConvertFrom-Json
           $i = 0
