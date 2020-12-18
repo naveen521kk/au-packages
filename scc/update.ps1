@@ -25,7 +25,8 @@ function global:au_GetLatest {
     }
   }
   $version = $stableRelease.tag_name
-  $version = Get-Version $version
+  $url32 = $url32.ToString()
+  $url64 = $url64.ToString()
   return @{ Version = $version; URL64 = $url64; URL32 = $url32; }
 }
 function global:au_BeforeUpdate { 
@@ -45,4 +46,4 @@ function global:au_SearchReplace {
     }
   }
 }
-update -ChecksumFor none -NoCheckUrl
+update -ChecksumFor none
