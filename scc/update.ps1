@@ -1,7 +1,6 @@
 import-module au
 
 $github_api_url = 'https://api.github.com/repos/boyter/scc/releases'
-
 function global:au_GetLatest {
   $contentFetched = Invoke-WebRequest $github_api_url | ConvertFrom-Json
   $i = 0
@@ -46,4 +45,4 @@ function global:au_SearchReplace {
     }
   }
 }
-update -ChecksumFor none
+update -ChecksumFor none -NoCheckUrl
