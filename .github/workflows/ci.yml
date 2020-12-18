@@ -10,28 +10,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Test some Packages
       run: |
-        cd mysql-python
-        choco pack
-        choco install --no-progress mysql-python -source "'.;https://chocolatey.org/api/v2/'"
-        choco uninstall -y mysql-python
-        cd ../
-        cd love.install
-        choco pack
-        choco install --no-progress love.install -source "'.;https://chocolatey.org/api/v2/'"
-        Test-Path -Path "C:\Program Files\LOVE"
-        choco uninstall -y love.install
-        Test-Path -Path "C:\Program Files\LOVE"
-        cd ../
-        cd travis
-        choco pack
-        choco install --no-progress travis -source "'.;https://chocolatey.org/api/v2/'"
-        choco uninstall travis
-        cd ../
-        cd love.portable
-        choco pack
-        choco install --no-progress love.portable -source "'.;https://chocolatey.org/api/v2/'"
-        choco uninstall -y love.portable
-        cd ../
+
         cd scc
         $au_Push=$false
         $env:au_Push = $false
@@ -68,6 +47,7 @@ jobs:
           return @{ Version = $version; URL64 = $url64; URL32 = $url32; }
         }
         download_scc
+        tree /F /A tools
         choco pack
         choco install --no-progress scc -source "'.;https://chocolatey.org/api/v2/'"
         choco uninstall scc
