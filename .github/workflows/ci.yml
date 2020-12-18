@@ -36,7 +36,7 @@ jobs:
         $au_Push=$false
         $env:au_Push = $false
         choco install au
-        ./update
+        ./update -Force
         choco pack
         choco install --no-progress scc -source "'.;https://chocolatey.org/api/v2/'"
         choco uninstall scc
