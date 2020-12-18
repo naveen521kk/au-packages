@@ -21,11 +21,11 @@
 	  <releaseNotes>https://docs.manim.community/en/stable/changelog.html</releaseNotes>
     <description>Manim is an animation engine written in Python primarily used to create explanatory math videos such as those of [3Blue1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw). It allows for the creation of precise animations programmatically. For more info, [see the GitHub repo](https://github.com/manimcommunity/manim).
 
-This package aims to simplify the historically painful process of setting up Manim on Windows, by including with it Python 3.8.3, ffmpeg, pycairo and sox. After installation you can execute your animation scripts with manim &lt;file&gt;.py.
+This package aims to simplify the historically painful process of setting up Manim on Windows. After installation you can execute your animation scripts with `manim &lt;file&gt;.py`.
 
 File any issues at https://github.com/manimcommunity/manim/issues
 
-**NOTE:** This package ships with the [community version](https://github.com/manimcommunity/manim) of manim, which is different from https://github.com/3b1b/manim, mainly because it is developed by a team of volunteer developers. This software is currently under development and may be out of date, unstable, buggy, or not even run at all when installed.
+**NOTE:** This package  installs the [community version](https://github.com/manimcommunity/manim) of manim, which is different from https://github.com/3b1b/manim, mainly because it is developed by a team of volunteer developers. This software is currently under development and may be out of date, unstable, buggy, or not even run at all when installed.
 
 This **installs** manim using [pip](https://pip.pypa.io/en/stable/) with its dependencies.
 
