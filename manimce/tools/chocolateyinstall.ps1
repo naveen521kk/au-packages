@@ -44,6 +44,7 @@ New-Item -ItemType Directory -Force -Path "$InstallLocation\Manim"
 New-Item "$InstallLocation\Manim\installInfo.json" -ItemType file -Value $install #save install info
 
 Write-Host "Upgrading pip and install Wheel" -ForegroundColor Yellow
+& "$python" -m ensurepip
 & "$python" -m pip install --upgrade pip wheel
 
 Write-Host "Install Numpy v1.19.3 to avoid problems"
