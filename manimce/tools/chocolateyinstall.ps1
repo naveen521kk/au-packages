@@ -12,6 +12,22 @@ Install-ChocolateyZipPackage `
   -Checksum64 "599E10248B90C408C95AA3429A4DBC4137702242BDDE919A417471E38B100802" `
   -ChecksumType64 "SHA256"
 Install-ChocolateyPath "$InstallLocation\pango" 'Machine'
+
+Write-Host "Settting Environment Variables" -ForegroundColor Red
+Install-ChocolateyEnvironmentVariable `
+  -VariableName "PANGO_LOCATION" `
+  -VariableValue "$InstallLocation\pango\libpango-1.0-0.dll" `
+  -VariableType Machine
+Install-ChocolateyEnvironmentVariable `
+  -VariableName "GLIB_LOCATION" `
+  -VariableValue "$InstallLocation\pango\libglib-2.0-0.dll" `
+  -VariableType Machine
+Install-ChocolateyEnvironmentVariable `
+  -VariableName "GOBJECT_LOCATION" `
+  -VariableValue "$InstallLocation\pango\libgobject-2.0-0.dll" `
+  -VariableType Machine
+
+
 $python = (Get-Command python).source #to lock over specific python version
 if ($python -eq $null){
 	$python = (Get-Command python).Definition #support powershell 4 as it has different syntax for above one
@@ -38,9 +54,6 @@ Write-Host "Preparing Install" -ForegroundColor Yellow
 
 $env:PATH = "$InstallLocation\pango;$env:PATH"
 Write-Host "Installing Manim to $InstallLocation\Manim"
-& "$python" -m pip install cffi --no-cache
-& "$python" -m pip install pangocffi<0.7.0 --no-cache --no-binary :all:
-& "$python" -m pip install pangocairocffi<0.4.0 --no-cache --no-binary :all:
 & "$python" -m pip install "manim==$version" --no-cache --compile --prefix="$InstallLocation\Manim" --no-warn-script-location --log="pip.log"
 
 Write-Host "Making $python detect the Manim"
