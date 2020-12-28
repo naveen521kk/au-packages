@@ -4,7 +4,7 @@
   <metadata>
     <id>sphinx</id>
     <title>Sphinx</title>
-    <version>0.0.1</version>
+    <version>3.4.1</version>
     <authors>Georg Brandl</authors>
     <owners>naveen521kk</owners>
     <projectUrl>https://www.sphinx-doc.org</projectUrl>
@@ -17,7 +17,6 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <summary>Sphinx is a tool that makes it easy to create intelligent and beautiful documentation for Python projects (or other documents consisting of multiple reStructuredText sources)</summary>
     <description><![CDATA[
-
 Sphinx is a tool that makes it easy to create intelligent and beautiful documentation, written by Georg Brandl and licensed under the BSD license.
 
 It was originally created for the Python documentation, and it has excellent facilities for the documentation of software projects in a range of languages. Of course, this site is also created from reStructuredText sources using Sphinx!
@@ -31,7 +30,6 @@ It was originally created for the Python documentation, and it has excellent fac
 * **Code handling:** automatic highlighting using the [Pygments](http://pygments.org/) highlighter.
 * **Extensions:** automatic testing of code snippets, inclusion of docstrings from Python modules (API docs), and [more](https://www.sphinx-doc.org/en/master/ext/builtins.html#builtin-sphinx-extensions).
 * **Contributed extensions:** more than 50 extensions [contributed by users](https://www.sphinx-doc.org/en/master/develop.html#extensions) in a second repository; most of them installable from PyPI
-
 ]]></description>
     <tags>sphinx reStructuredText markdown documentation foss cross-platform cli</tags>
     <releaseNotes>https://www.sphinx-doc.org/en/master/changes.html</releaseNotes>
