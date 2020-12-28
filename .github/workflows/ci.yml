@@ -32,6 +32,11 @@ jobs:
         choco install --no-progress love.portable -source "'.;https://chocolatey.org/api/v2/'"
         choco uninstall -y love.portable
         cd ../
+        cd sphinx
+        choco pack
+        choco install --no-progress sphinx -source "'.;https://chocolatey.org/api/v2/'"
+        choco uninstall -y sphinx
+        cd ../
         cd scc
         $au_Push=$false
         $env:au_Push = $false
