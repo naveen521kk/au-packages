@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>sphinx</id>
+    <title>Sphinx</title>
+    <version>0.0.1</version>
+    <authors>Georg Brandl</authors>
+    <owners>naveen521kk</owners>
+    <projectUrl>https://www.sphinx-doc.org</projectUrl>
+    <projectSourceUrl>https://github.com/sphinx-doc/sphinx</projectSourceUrl>
+    <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/sphinx</packageSourceUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/naveen521kk/au-packages/icons/sphinx.png</iconUrl>
+    <licenseUrl>https://github.com/sphinx-doc/sphinx/blob/3.x/LICENSE</licenseUrl>
+    <docsUrl>https://www.sphinx-doc.org</docsUrl>
+    <bugTrackerUrl>https://github.com/sphinx-doc/sphinx/issues</bugTrackerUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <summary>Sphinx is a tool that makes it easy to create intelligent and beautiful documentation for Python projects (or other documents consisting of multiple reStructuredText sources)</summary>
+    <description><![CDATA[
+
+Sphinx is a tool that makes it easy to create intelligent and beautiful documentation, written by Georg Brandl and licensed under the BSD license.
+
+It was originally created for the Python documentation, and it has excellent facilities for the documentation of software projects in a range of languages. Of course, this site is also created from reStructuredText sources using Sphinx!
+
+## Features
+
+* **Output formats:**  HTML (including Windows HTML Help), LaTeX (for printable PDF versions), ePub, Texinfo, manual pages, plain text.
+* **Extensive cross-references:** semantic markup and automatic links for functions, classes, citations, glossary terms and similar pieces of information.
+* **Hierarchical structure:** easy definition of a document tree, with automatic links to siblings, parents and children
+* **Automatic indices:** general index as well as a language-specific module indices.
+* **Code handling:** automatic highlighting using the [Pygments](http://pygments.org/) highlighter.
+* **Extensions:** automatic testing of code snippets, inclusion of docstrings from Python modules (API docs), and [more](https://www.sphinx-doc.org/en/master/ext/builtins.html#builtin-sphinx-extensions).
+* **Contributed extensions:** more than 50 extensions [contributed by users](https://www.sphinx-doc.org/en/master/develop.html#extensions) in a second repository; most of them installable from PyPI
+
+]]></description>
+    <tags>sphinx reStructuredText markdown documentation foss cross-platform cli</tags>
+    <releaseNotes>https://www.sphinx-doc.org/en/master/changes.html</releaseNotes>
+    <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.3.3" />
+      <dependency id="python" version="3.5" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
