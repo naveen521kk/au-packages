@@ -139,10 +139,10 @@ jobs:
       shell: cmd
       continue-on-error: true
       run: |
-        set PATH=C:\tools\pango;%PATH%
+        set PATH=C:\tools\Manim\Scripts;%PATH%
         where libcairo-2.dll
         where manim
-        where manimcm
+        where manimce
         manim -h
         curl -L https://raw.githubusercontent.com/ManimCommunity/manim/master/example_scenes/basic.py -O basic.py
         manim basic.py SquareToCircle
