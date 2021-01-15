@@ -9,14 +9,14 @@ if ($null -eq $python) {
 
 Write-Host "Found python at '$python' using it."
 Write-Host "Using python version $(python --version --version)" -ForegroundColor Red
-$sitePackageFolder = cmd.exe /C "`"$python`" -m site --user-site"
+$sitePackageFolder = & "$python" -m site --user-site
 New-Item -ItemType Directory -Force -Path "$sitePackageFolder"
 $install = @{
   "python"            = $python
   "sitePackageFolder" = $sitePackageFolder
 }  | ConvertTo-Json
 New-Item -ItemType Directory -Force -Path "$InstallLocation\Manim"
-New-Item "$InstallLocation\Manim\installInfo.json" -ItemType file -Value $install #save install info
+New-Item "$InstallLocation\Manim\installInfo.json" -Force -ItemType file -Value $install #save install info
 
 Write-Host "Upgrading pip and install Wheel" -ForegroundColor Yellow
 & "$python" -m ensurepip
