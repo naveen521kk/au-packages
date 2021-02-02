@@ -108,7 +108,7 @@ jobs:
         $env:PATH="C:\tools\TinyTeX\bin\win32;$env:PATH"
         curl -L https://pastebin.com/raw/QcbYFiTz -o tex.py
         pip install manim
-        manim tex.py
+        python -m manim tex.py
         choco uninstall manim-latex
     - uses: actions/upload-artifact@v2
       with:
