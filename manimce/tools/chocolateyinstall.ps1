@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop';
 $InstallLocation = Get-ToolsLocation
-$version = '0.2.0'
+$version = '0.3.0'
 
 $python = (Get-Command python).source #to lock over specific python version
 if ($null -eq $python) {
