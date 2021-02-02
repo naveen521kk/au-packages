@@ -105,10 +105,8 @@ jobs:
         $env:PATH="C:\tools\pango;$env:PATH"
         $env:PATH="C:\tools\TinyTeX\bin\win32;$env:PATH"
         curl -L https://pastebin.com/raw/QcbYFiTz -o tex.py
-        pip install https://github.com/ManimCommunity/manim/archive/master.zip
-        python -m pip install pangocffi<0.7.0 --force --no-binary :all: --no-cache
-        python -m pip install pangocairocffi<0.4.0 --force --no-binary :all: --no-cache
-        python -m manim tex.py
+        pip install manimce
+        manim tex.py
         choco uninstall manim-latex
     - uses: actions/upload-artifact@v2
       with:
