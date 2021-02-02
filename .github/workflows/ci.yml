@@ -88,6 +88,13 @@ jobs:
     runs-on: windows-2016
     steps:
     - uses: actions/checkout@v2
+    - name: Install Python
+      run: |
+        choco install python3 --no-progress --version=3.8.6
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+         python-version: 3.8.6
     - name: Install Manim
       run: |
         choco install --no-progress manimce
@@ -96,16 +103,11 @@ jobs:
         choco install --no-progress manim-latex -source "'.;https://chocolatey.org/api/v2/'"
         cd ../
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-         python-version: 3.8
     - name: Install Manim and Manim-Tex and test
       run: |
-        $env:PATH="C:\tools\pango;$env:PATH"
         $env:PATH="C:\tools\TinyTeX\bin\win32;$env:PATH"
         curl -L https://pastebin.com/raw/QcbYFiTz -o tex.py
-        pip install manimce
+        pip install manim
         manim tex.py
         choco uninstall manim-latex
     - uses: actions/upload-artifact@v2
