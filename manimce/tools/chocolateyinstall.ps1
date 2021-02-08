@@ -22,9 +22,6 @@ Write-Host "Upgrading pip and install Wheel" -ForegroundColor Yellow
 & "$python" -m ensurepip
 & "$python" -m pip install --upgrade pip wheel
 
-Write-Host "Install Numpy v1.19.3 to avoid problems"
-& "$python" -m pip install --upgrade numpy==1.19.3
-
 Write-Host "Installing Manim to $InstallLocation\Manim"
 & "$python" -m pip install "manim==$version" --no-cache --compile --prefix="$InstallLocation\Manim" --no-warn-script-location --log="pip.log"
 
