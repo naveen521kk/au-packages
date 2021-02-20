@@ -9,7 +9,7 @@ if ($null -eq $python) {
 
 Write-Host "Found python at '$python' using it."
 Write-Host "Using python version $(python --version --version)" -ForegroundColor Red
-$sitePackageFolder = & "$python" -m site --user-site
+$sitePackageFolder = & "$python" -c "import sysconfig;print(sysconfig.get_path('purelib'))"
 New-Item -ItemType Directory -Force -Path "$sitePackageFolder"
 $install = @{
   "python"            = $python
