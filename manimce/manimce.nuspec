@@ -6,7 +6,7 @@
     <version>0.3.0.20210220</version>
     <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/manimce</packageSourceUrl>
     <owners>naveen521kk</owners>
-    <title>ManimCE Install</title>
+    <title>Manim Install</title>
     <authors>Manim Contributors</authors>
     <projectUrl>https://www.manim.community/</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/ManimCommunity/manim/logo/light/transparent_background.png</iconUrl>
