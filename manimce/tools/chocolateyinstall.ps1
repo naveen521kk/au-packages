@@ -1,5 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop';
 $InstallLocation = Get-ToolsLocation
+$toolsPath = Split-Path $MyInvocation.MyCommand.Definition
+
 $version = '0.3.0'
 
 . $toolsPath\helper.ps1
