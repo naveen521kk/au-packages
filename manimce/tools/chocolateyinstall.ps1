@@ -2,15 +2,14 @@
 $InstallLocation = Get-ToolsLocation
 $version = '0.3.0'
 
-$python = (Get-Command python).source #to lock over specific python version
-if ($null -eq $python) {
-  $python = (Get-Command python).Definition #support powershell 4 as it has different syntax for above one
-}
+. $toolsPath\helper.ps1
 
+$allowed_python_versions = @('3.6', '3.7', '3.8', '3.9') # sync with nuspec
+
+$python = FindPython $allowed_python_versions
 Write-Host "Found python at '$python' using it."
 Write-Host "Using python version $(python --version --version)" -ForegroundColor Red
 $sitePackageFolder = & "$python" -c "import sysconfig;print(sysconfig.get_path('purelib'))"
-New-Item -ItemType Directory -Force -Path "$sitePackageFolder"
 $install = @{
   "python"            = $python
   "sitePackageFolder" = $sitePackageFolder
