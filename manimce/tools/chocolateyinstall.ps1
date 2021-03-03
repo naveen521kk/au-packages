@@ -21,7 +21,7 @@ New-Item "$InstallLocation\Manim\installInfo.json" -Force -ItemType file -Value 
 
 Write-Host "Upgrading pip and install Wheel" -ForegroundColor Yellow
 & "$python" -m ensurepip
-& "$python" -m pip install --upgrade pip wheel
+& "$python" -m pip install --upgrade pip wheel --no-warn-script-location
 
 Write-Host "Installing Manim to $InstallLocation\Manim"
 & "$python" -m pip install "manim==$version" --no-cache --compile --prefix="$InstallLocation\Manim" --no-warn-script-location --log="pip.log" --no-warn-conflicts
