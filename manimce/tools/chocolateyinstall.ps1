@@ -10,7 +10,8 @@ $allowed_python_versions = @('3.9', '3.8', '3.7', '3.6') # sync with nuspec
 
 $python = FindPython $allowed_python_versions
 Write-Host "Found python at '$python' using it."
-Write-Host "Using python version $(python --version --version)" -ForegroundColor Red
+$python_version = & "$python" --version --version
+Write-Host "Using python version $python_version" -ForegroundColor Red
 $sitePackageFolder = & "$python" -c "import sysconfig;print(sysconfig.get_path('purelib'))"
 $install = @{
   "python"            = $python
