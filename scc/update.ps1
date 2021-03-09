@@ -41,10 +41,6 @@ function global:au_SearchReplace {
       "(?i)(checksum32:).*" = "`${1} $($Latest.Checksum32)"
       "(?i)(checksum64:).*" = "`${1} $($Latest.Checksum64)"
     }
-    "tools\chocolateyInstall.ps1" = @{
-      "(^[$]checksum32\s*=\s*)('.*')" = "`$1'$($Latest.Checksum32)'"
-      "(^[$]checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
-    }
   }
 }
 update -ChecksumFor none
