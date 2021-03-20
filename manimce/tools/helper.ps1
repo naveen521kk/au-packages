@@ -36,13 +36,14 @@ function FindPython {
   # we are querying machine regsitry only because chocolatey
   # installs python in admin mode only.
   $avaiable_installation = Get-ChildItem -Path Registry::HKEY_LOCAL_MACHINE\Software\Python\PythonCore | Select-Object Name
+  [array]::Reverse($avaiable_installation)
   foreach ($install in $avaiable_installation) {
     $name_install = $install.Name
     $install_version = ($name_install -split '\\')[-1]
     if ($allowed_python_versions.Contains($install_version)) {
-      Write-Host "Found Python Version from Registry $install_version" -ForegroundColor Yellow
+      Write-Host "Found Python $install_version from Registry" -ForegroundColor Yellow
       $python_executable = Get-ItemProperty -Path "Registry::$name_install\InstallPath" | Select-Object ExecutablePath
-      Write-Host "Found Install Path from Registry $($python_executable.ExecutablePath)" -ForegroundColor Yellow
+      Write-Host "Found Install Path - $($python_executable.ExecutablePath)" -ForegroundColor Yellow
       return $python_executable.ExecutablePath
     }
   }
