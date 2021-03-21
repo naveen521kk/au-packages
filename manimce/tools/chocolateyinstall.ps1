@@ -34,6 +34,5 @@ $pthFileContent = "$InstallLocation\Manim\Lib\site-packages"
 $Utf8NoBomEncoding = New-Object System.Text.UTF8Encoding $False
 [System.IO.File]::WriteAllLines($pthFilePath, $pthFileContent, $Utf8NoBomEncoding)
 
-
 Write-Host "Adding $InstallLocation\Manim\Scripts to `$PATH"
 Install-ChocolateyPath "$InstallLocation\Manim\Scripts" 'Machine'
