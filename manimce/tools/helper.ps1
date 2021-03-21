@@ -36,7 +36,9 @@ function FindPython {
   # we are querying machine regsitry only because chocolatey
   # installs python in admin mode only.
   $avaiable_installation = Get-ChildItem -Path Registry::HKEY_LOCAL_MACHINE\Software\Python\PythonCore | Select-Object Name
-  [array]::Reverse($avaiable_installation)
+  if ($avaiable_installation.length -gt 1){
+    [array]::Reverse($avaiable_installation)
+  }
   foreach ($install in $avaiable_installation) {
     $name_install = $install.Name
     $install_version = ($name_install -split '\\')[-1]
