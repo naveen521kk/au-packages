@@ -192,3 +192,14 @@ jobs:
     - name: List
       run: |
         tree C:\tools
+    - name: Upload Logs if failes
+      uses: actions/upload-artifact@v2
+      if: ${{ failure() }}
+      with:
+        name: chocologs-manim
+        path: C:\ProgramData\chocolatey\logs\chocolatey.log
+    - name: Upload Logs
+      uses: actions/upload-artifact@v2
+      with:
+        name: chocologs-manim
+        path: C:\ProgramData\chocolatey\logs\chocolatey.log
