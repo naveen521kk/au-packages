@@ -31,7 +31,7 @@ if ($AddToPath) {
 
 $InstallGCC = StrToBool $pp['InstallGCC']
 if ($InstallGCC) {
-    ExeToRun         = "$(Get-Item $InstallLocation\*\finish.exe)"
+    $ExeToRun = "$(Get-Item $InstallLocation\*\finish.exe)"
     $processArgs = @{
         ExeToRun         = "$(Get-Item $InstallLocation\*\finish.exe)"
         Statements       = "-y"
