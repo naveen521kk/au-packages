@@ -31,12 +31,11 @@ if ($AddToPath) {
 
 $InstallGCC = StrToBool $pp['InstallGCC']
 if ($InstallGCC) {
-    mkdir "$(Get-Item $InstallLocation\*\bin\dist)"
+    mkdir "$(Get-Item $InstallLocation\*)\dist"
     $processArgs = @{
         ExeToRun         = "$(Get-Item $InstallLocation\*\finish.exe)"
         Statements       = "-y"
         WorkingDirectory = "$(Get-Item $InstallLocation\*)"
-        ValidExitCodes   = @(0)
     }
     Start-ChocolateyProcessAsAdmin @processArgs
 }
