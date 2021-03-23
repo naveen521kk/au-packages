@@ -180,7 +180,7 @@ jobs:
         $versions = au_GetLatest
         curl -L "$($versions.URL64)" -o tools\nim-$($versions.Version)_x64.zip
         curl -L "$($versions.URL32)" -o tools\nim-$($versions.Version)_x32.zip
-        tree /A
+        tree /A /F
         choco pack
     - name: Install
       shell: pwsh
