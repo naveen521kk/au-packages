@@ -158,3 +158,37 @@ jobs:
       with:
         name: chocologs-manim
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
+  
+  nim_test:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set Up
+      shell: pwsh
+      run: |
+        cd nim
+        $github_api_url = 'https://api.github.com/repos/nim-lang/Nim/tags'
+        function global:au_GetLatest {
+          $contentFetched = Invoke-WebRequest $github_api_url | ConvertFrom-Json
+          $stableRelease = $contentFetched[0]
+          $version = $stableRelease.name
+          $url32 = "https://nim-lang.org/download/nim-$($version)_x32.zip"
+          $url64 = "https://nim-lang.org/download/nim-$($version)_x64.zip"
+          $version = Get-Version $version
+          return @{ Version = $version; URL64 = $url64; URL32 = $url32; }
+        }
+        $versions = au_GetLatest
+        curl -L "$($versions.URL64)" -o tools\nim-$($versions.Version)_x64.zip
+        curl -L "$($versions.URL32)" -o tools\nim-$($versions.Version)_x32.zip
+        choco pack
+    - name: Install
+      shell: pwsh
+      run: | 
+        choco install --no-progress nim --source "."
+    - name: Uninstall
+      run: |
+        choco uninstall nim -y
+    - name: List
+      run: |
+        tree C:\tools
