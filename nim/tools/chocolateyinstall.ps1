@@ -32,8 +32,9 @@ if ($AddToPath) {
 $InstallGCC = StrToBool $pp['InstallGCC']
 if ($InstallGCC) {
     $processArgs = @{
-        ExeToRun   = "$(Get-Item $InstallLocation\*\finish.exe)"
-        Statements = "-y"
+        ExeToRun         = "$(Get-Item $InstallLocation\*\finish.exe)"
+        Statements       = "-y"
+        WorkingDirectory = "$(Get-Item $InstallLocation\*)"
     }
     Start-ChocolateyProcessAsAdmin @processArgs
 }
