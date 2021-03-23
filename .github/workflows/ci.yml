@@ -175,7 +175,6 @@ jobs:
           $version = $stableRelease.name
           $url32 = "https://nim-lang.org/download/nim-$($version)_x32.zip"
           $url64 = "https://nim-lang.org/download/nim-$($version)_x64.zip"
-          $version = Get-Version $version
           return @{ Version = $version; URL64 = $url64; URL32 = $url32; }
         }
         $versions = au_GetLatest
