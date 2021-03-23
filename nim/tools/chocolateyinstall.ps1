@@ -20,7 +20,7 @@ $packageArgs = @{
     FileFullPath   = "$(Get-Item $toolsDir\nim-*_x32.zip)"
     FileFullPath64 = "$(Get-Item $toolsDir\nim-*_x64.zip)"
 }
-echo $packageArgs
+echo "$(Get-Item $toolsDir\nim-*_x32.zip)"
 Get-ChocolateyUnzip @packageArgs
 
 $AddToPath = StrToBool $pp['AddToPath']
