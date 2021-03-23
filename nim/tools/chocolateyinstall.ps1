@@ -32,12 +32,14 @@ if ($AddToPath) {
 $InstallGCC = StrToBool $pp['InstallGCC']
 if ($InstallGCC) {
     mkdir "$(Get-Item $InstallLocation\*)\dist"
+    ExeToRun         = "$(Get-Item $InstallLocation\*\finish.exe)"
     $processArgs = @{
         ExeToRun         = "$(Get-Item $InstallLocation\*\finish.exe)"
         Statements       = "-y"
         WorkingDirectory = "$(Get-Item $InstallLocation\*)"
     }
-    Start-ChocolateyProcessAsAdmin @processArgs
+    #Start-ChocolateyProcessAsAdmin @processArgs
+    & "$ExeToRun" -y
 }
 
 # silent chocolatey from shiming things.
