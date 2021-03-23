@@ -35,6 +35,7 @@ if ($InstallGCC) {
         ExeToRun         = "$(Get-Item $InstallLocation\*\finish.exe)"
         Statements       = "-y"
         WorkingDirectory = "$(Get-Item $InstallLocation\*)"
+        ValidExitCodes   = @(0)
     }
     Start-ChocolateyProcessAsAdmin @processArgs
 }
