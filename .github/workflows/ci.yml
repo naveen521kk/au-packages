@@ -186,6 +186,7 @@ jobs:
     - name: Install
       shell: pwsh
       run: | 
+        choco install --no-progress curl
         choco install --no-progress nim --source "."
     - name: Uninstall
       run: |
