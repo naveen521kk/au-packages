@@ -182,6 +182,7 @@ jobs:
         curl -L "$($versions.URL32)" -o tools\nim-$($versions.Version)_x32.zip
         tree /A /F
         choco pack
+        Remove-Item -Path C:\Program Files\Git\mingw64 -Recurse -Force
     - name: Install
       shell: pwsh
       run: | 
