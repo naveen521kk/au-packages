@@ -186,6 +186,15 @@ jobs:
       shell: pwsh
       run: | 
         choco install --no-progress nim --source "."
+    - name: Smoke Tests
+      shell: pwsh
+      run: |
+        $env:PATH = "C:\tools\Nim\nim-1.4.4\bin;$env:PATH"
+        echo 'echo("hello")' > hello.nim
+        nim compile --verbosity:0 hello.nim
+        ls
+        ./hello.exe
+
     - name: Uninstall
       run: |
         choco uninstall nim -y
