@@ -11,10 +11,6 @@ if (!$pp['AddToPath']) {
     $pp['AddToPath'] = 'true'
 }
 
-if (!$pp['InstallGCC']) {
-    $pp['InstallGCC'] = 'true'
-}
-
 $packageArgs = @{
     Destination    = $InstallLocation
     FileFullPath   = "$(Get-Item $toolsDir\nim-*_x32.zip)"
@@ -27,14 +23,6 @@ if ($AddToPath) {
     # REF: https://nim-lang.org/install_windows.html#configuring-the-path-environment-variable
     Install-ChocolateyPath -PathToInstall "$(Get-Item $InstallLocation\*)\bin"
     Install-ChocolateyPath -PathToInstall "$($env:USERPROFILE)\.nimble\bin"
-}
-
-$InstallGCC = StrToBool $pp['InstallGCC']
-if ($InstallGCC) {
-    $ErrorActionPreference = 'continue'
-    $ExeToRun = "$(Get-Item $InstallLocation\*\finish.exe)"
-    & "$ExeToRun" -y
-    $ErrorActionPreference = 'stop'
 }
 
 # silent chocolatey from shiming things.

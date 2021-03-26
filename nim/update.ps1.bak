@@ -5,9 +5,9 @@ function global:au_GetLatest {
   $contentFetched = Invoke-WebRequest $github_api_url | ConvertFrom-Json
   $stableRelease = $contentFetched[0]
   $version = $stableRelease.name
+  $version = Get-Version $version
   $url32 = "https://nim-lang.org/download/nim-$($version)_x32.zip"
   $url64 = "https://nim-lang.org/download/nim-$($version)_x64.zip"
-  $version = Get-Version $version
   return @{ Version = $version; URL64 = $url64; URL32 = $url32; }
 }
 function global:au_BeforeUpdate { 

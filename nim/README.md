@@ -27,8 +27,7 @@ Nim is a statically typed compiled systems programming language. It combines suc
 
 The following package parameters can be set:
 - `/AddToPath:` - Add the binaries to `PATH`. Allowed values are either `true` or `false`. By default `true`. 
-- `/InstallGCC:` - Install MingW GCC compiler. Allowed values are either `true` or `false`. by default `true`. 
 
-To pass parameters, use `--params "''"` (e.g. `choco install nim [other options] --params="'/InstallGCC:false'"`).
+To pass parameters, use `--params "''"` (e.g. `choco install nim [other options] --params="'/AddToPath:false'"`).
 
 To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
