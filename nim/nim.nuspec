@@ -53,6 +53,9 @@ To have choco remember parameters on upgrade, be sure to set `choco feature enab
 
 
 ]]></description>
+  <dependencies>
+      <dependency id="curl" />
+  </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
