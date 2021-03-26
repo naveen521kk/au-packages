@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>nim</id>
-    <version>0.11.2</version>
+    <version>1.4.4</version>
     <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/nim</packageSourceUrl>
     <owners>naveen521kk</owners>
     <title>Nim (Install)</title>
@@ -20,6 +20,7 @@
     <summary>Nim is a statically typed compiled systems programming language. It combines successful concepts from mature languages like Python, Ada and Modula.</summary>
     <releaseNotes>https://github.com/nim-lang/Nim/tree/devel/changelogs</releaseNotes>
     <description><![CDATA[Nim is a statically typed compiled systems programming language. It combines successful concepts from mature languages like Python, Ada and Modula.
+
 ## Efficient
 - Nim generates native dependency-free executables, not dependent on a virtual machine, which are small and allow easy redistribution.
 - The Nim compiler and the generated executables support all major platforms like Windows, Linux, BSD and macOS.
@@ -45,16 +46,13 @@
 
 The following package parameters can be set:
 - `/AddToPath:` - Add the binaries to `PATH`. Allowed values are either `true` or `false`. By default `true`. 
-- `/InstallGCC:` - Install MingW GCC compiler. Allowed values are either `true` or `false`. by default `true`. 
 
-To pass parameters, use `--params "''"` (e.g. `choco install nim [other options] --params="'/InstallGCC:false'"`).
+To pass parameters, use `--params "''"` (e.g. `choco install nim [other options] --params="'/AddToPath:false'"`).
 
 To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
-
-
 ]]></description>
   <dependencies>
-      <dependency id="mingw" version="4.7.2"/>
+      <dependency id="mingw" version="4.7.2" />
   </dependencies>
   </metadata>
   <files>
