@@ -31,14 +31,10 @@ if ($AddToPath) {
 
 $InstallGCC = StrToBool $pp['InstallGCC']
 if ($InstallGCC) {
+    $ErrorActionPreference = 'continue'
     $ExeToRun = "$(Get-Item $InstallLocation\*\finish.exe)"
-    $processArgs = @{
-        ExeToRun         = "$(Get-Item $InstallLocation\*\finish.exe)"
-        Statements       = "-y"
-        WorkingDirectory = "$(Get-Item $InstallLocation\*)"
-    }
-    #Start-ChocolateyProcessAsAdmin @processArgs
     & "$ExeToRun" -y
+    $ErrorActionPreference = 'stop'
 }
 
 # silent chocolatey from shiming things.
