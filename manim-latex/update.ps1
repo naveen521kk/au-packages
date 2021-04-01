@@ -14,12 +14,12 @@ function global:au_GetLatest {
   }
   $version = $stableRelease.tag_name
   $version=$version.Substring(1)
-  return @{ Version = $version;}
+  return @{ Version = $version; OrigVersion = $version}
 }
 function global:au_SearchReplace {
   @{
     ".\manim-latex.nuspec" = @{
-	  "(?i)(<dependency id=`"tinytex`" version=`")(.*?)(`" \/>)"   = "`${1}$($Latest.Version)`${3}"
+	  "(?i)(<dependency id=`"tinytex`" version=`")(.*?)(`" \/>)"   = "`${1}$($Latest.OrigVersion)`${3}"
     }
 }
 }

@@ -26,7 +26,7 @@
 	Please inform maintainers as this is an [automatic package](https://chocolatey.org/docs/automatic-packages).</description>
     <releaseNotes>https://manimce.readthedocs.io/en/latest/changelog.html</releaseNotes>   
     <dependencies>
-      <dependency id="tinytex" version="2021.3.0.20210401" />
+      <dependency id="tinytex" version="2021.03" />
     </dependencies>
   </metadata>
   <files>
