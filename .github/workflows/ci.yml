@@ -110,6 +110,8 @@ jobs:
         curl -L https://pastebin.com/raw/QcbYFiTz -o tex.py
         pip install manim
         python -m manim tex.py
+        curl -L https://gist.github.com/naveen521kk/15f4938acd774b576bd05d86ef4e7d45/raw/7152ffec8f9636cc4548b6729fd0c5db5a390ecf/brace.py -o brace1.py
+        python -m manim brace1.py
         choco uninstall manim-latex
     - uses: actions/upload-artifact@v2
       with:
