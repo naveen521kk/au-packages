@@ -185,6 +185,7 @@ jobs:
         curl -L "$($versions.URL32)" -o tools\nim-$($versions.Version)_x32.zip
         tree /A /F
         choco pack
+        echo "C:\tools\Nim\nim-$($versions.Version)\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
     - name: Install
       shell: pwsh
       run: | 
@@ -193,7 +194,6 @@ jobs:
       shell: pwsh
       working-directory: ${{ runner.temp }}
       run: |
-        $env:PATH = "C:\tools\Nim\nim-1.4.4\bin;$env:PATH"
         echo 'echo("hello")' > hello.nim
         nim compile --verbosity:0 hello.nim
         ./hello.exe
