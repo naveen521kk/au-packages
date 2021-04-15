@@ -3,6 +3,7 @@ name: Test Packages
 on:
   push:
   workflow_dispatch:
+  release:
 
 jobs:
   test:
