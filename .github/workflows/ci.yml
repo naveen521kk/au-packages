@@ -131,13 +131,13 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-         python-version: "3.8.5"
+         python-version: "3.9.4"
     - name: Make choco Package
       run: |
         cd "manimce"
         choco pack
         choco install --no-progress ffmpeg
-        choco install --no-progress python --version=3.8.5
+        choco install --no-progress python --version=3.9.4
         choco install --no-progress manimce --source "."
     - name: Test Generated Files
       shell: cmd
