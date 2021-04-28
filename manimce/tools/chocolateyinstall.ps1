@@ -20,7 +20,7 @@ $install = @{
 New-Item -ItemType Directory -Force -Path "$InstallLocation\Manim"
 New-Item "$InstallLocation\Manim\installInfo.json" -Force -ItemType file -Value $install #save install info
 
-$ErrorActionPreference = 'Continue';
+$ErrorActionPreference = 'Continue'; # pip fails by giving some warnings
 Write-Host "Upgrading pip and install Wheel" -ForegroundColor Yellow
 & "$python" -m ensurepip
 & "$python" -m pip install --upgrade pip wheel --no-warn-script-location
