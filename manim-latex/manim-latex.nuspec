@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>manim-latex</id>
-    <version>2021.04</version>
+    <version>2021.05</version>
     <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/manim-latex</packageSourceUrl>
     <owners>naveen521kk</owners>
     <title>LaTeX for Manim (Install)</title>
@@ -26,7 +26,7 @@
 	Please inform maintainers as this is an [automatic package](https://chocolatey.org/docs/automatic-packages).</description>
     <releaseNotes>https://manimce.readthedocs.io/en/latest/changelog.html</releaseNotes>   
     <dependencies>
-      <dependency id="tinytex" version="2021.04" />
+      <dependency id="tinytex" version="2021.05" />
     </dependencies>
   </metadata>
   <files>
