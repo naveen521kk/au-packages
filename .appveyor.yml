@@ -20,7 +20,7 @@ environment:
   # Github token to commit pushed packages to repository
   github_user_repo: naveen521kk/au-packages
   github_api_key:
-    secure: LZPBzxBYJGVHzp/Opystipa60ePD+u2YaPpmy5iRrJx7x15KVBqNjs3kqezK4b/C #https://ci.appveyor.com/tools/encrypt
+    secure: aZsqrOsz6v4o3JgbSuvr5cT3Sfq0YfW+ppmwUO9FhPsFTEQVR8NGVr6nNHWhmrMW #https://ci.appveyor.com/tools/encrypt
 
 
   # Mail credentials - for error notifications
