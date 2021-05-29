@@ -26,7 +26,7 @@ Write-Host "Upgrading pip and install Wheel" -ForegroundColor Yellow
 & "$python" -m pip install --upgrade pip wheel --no-warn-script-location
 
 Write-Host "Installing Manim to $InstallLocation\Manim"
-& "$python" -m pip install "manim==$version" --no-cache --compile --prefix="$InstallLocation\Manim" --no-warn-script-location --log="pip.log" --no-warn-conflicts
+& "$python" -m pip install "manim==$version" --no-cache --compile --prefix="$InstallLocation\Manim" --no-warn-script-location --log="pip.log" --no-warn-conflicts --force
 $ErrorActionPreference = 'Stop';
 
 Write-Host "Making $python detect the Manim"
