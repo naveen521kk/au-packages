@@ -29,6 +29,7 @@ Write-Host "Installing Manim to $InstallLocation\Manim"
 & "$python" -m pip install "manim==$version" --no-cache --compile --prefix="$InstallLocation\Manim" --no-warn-script-location --log="pip.log" --no-warn-conflicts --force
 $ErrorActionPreference = 'Stop';
 
+
 Write-Host "Making $python detect the Manim"
 New-Item -ItemType Directory -Force -Path "$sitePackageFolder"
 $pthFilePath = "$sitePackageFolder\manimce.pth"
