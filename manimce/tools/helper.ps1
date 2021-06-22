@@ -44,9 +44,14 @@ function FindPython {
     $install_version = ($name_install -split '\\')[-1]
     if ($allowed_python_versions.Contains($install_version)) {
       Write-Host "Found Python $install_version from Registry" -ForegroundColor Yellow
-      $python_executable = Get-ItemProperty -Path "Registry::$name_install\InstallPath" | Select-Object ExecutablePath
-      Write-Host "Found Install Path - $($python_executable.ExecutablePath)" -ForegroundColor Yellow
-      return $python_executable.ExecutablePath
+      try{
+          $python_executable = Get-ItemProperty -Path "Registry::$name_install\InstallPath" | Select-Object ExecutablePath
+          Write-Host "Found Install Path - $($python_executable.ExecutablePath)" -ForegroundColor Yellow
+          return $python_executable.ExecutablePath
+      }
+      catch{
+         Write-Host "Install Path Not Found for $install_version - Skipping" -ForegroundColor Green
+      }
     }
   }
 }
