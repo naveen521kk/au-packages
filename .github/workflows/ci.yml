@@ -146,7 +146,7 @@ jobs:
         set PATH=C:\tools\Manim\Scripts;%PATH%
         where manim
         where manimce
-        manim -h
+        manim --help
         curl -L https://raw.githubusercontent.com/ManimCommunity/manim/master/example_scenes/basic.py -O basic.py
         manim basic.py SquareToCircle
         choco uninstall -y manimce
