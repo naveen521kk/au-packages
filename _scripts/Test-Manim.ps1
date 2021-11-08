@@ -30,9 +30,20 @@ docker build --build-arg INSTALLER_NAME="python-installer.exe" `
 Write-Output "::endgroup::"
 Write-Output "::group::Running Install"
 
-docker container run `
-    --rm naveen521kk/test-windows `
-    powershell -Command `
-    "choco install --no-progress -y manimce -source `"'.;https://chocolatey.org/api/v2/'`""
+# Python install failes in user.
+if ($dockerFile -eq "ManimOnlyUserInstall.dockerfile") {
+    docker container run `
+        --rm naveen521kk/test-windows `
+        powershell -Command `
+        "choco install --no-progress -y manimce -source `"'.;https://chocolatey.org/api/v2/'`" --ignore-dependencies"
+
+}
+else {
+    docker container run `
+        --rm naveen521kk/test-windows `
+        powershell -Command `
+        "choco install --no-progress -y manimce -source `"'.;https://chocolatey.org/api/v2/'`""
+
+}
 
 Write-Output "::endgroup::"
