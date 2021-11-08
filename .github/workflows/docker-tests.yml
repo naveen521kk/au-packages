@@ -4,6 +4,8 @@ on:
   push:
   workflow_dispatch:
   release:
+
+jobs:
   manim_test_docker:
     runs-on: windows-2019
 
