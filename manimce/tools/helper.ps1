@@ -54,4 +54,23 @@ function FindPython {
       }
     }
   }
+  Write-Host "Can't find python installed for all users. Searching for user installed python." -ForegroundColor Red
+  Write-Warning "This would mean you can't use manim outside of this user."
+  $avaiable_installation = Get-ChildItem -Path Registry::HKEY_CURRENT_USER\Software\Python\PythonCore | Select-Object Name
+  foreach ($install in $avaiable_installation) {
+    $name_install = $install.Name
+    $install_version = ($name_install -split '\\')[-1]
+    if ($allowed_python_versions.Contains($install_version)) {
+      Write-Host "Found Python $install_version from Registry" -ForegroundColor Yellow
+      try{
+          $python_executable = Get-ItemProperty -Path "Registry::$name_install\InstallPath" | Select-Object ExecutablePath
+          Write-Host "Found Install Path - $($python_executable.ExecutablePath)" -ForegroundColor Yellow
+          return $python_executable.ExecutablePath
+      }
+      catch{
+         Write-Host "Install Path Not Found for $install_version - Skipping" -ForegroundColor Green
+      }
+    }
+  }
+  throw "Can't find any python using registry. Try running `choco install python3 --force` and then rerun the command."
 }

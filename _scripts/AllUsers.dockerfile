@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/windows/server:10.0.20348.288
+FROM mcr.microsoft.com/windows:20H2-amd64
 WORKDIR C:/app
 
 ARG $INSTALLER_NAME
