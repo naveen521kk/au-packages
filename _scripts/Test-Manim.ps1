@@ -18,7 +18,7 @@ Set-Location $tempFolderPath
 Invoke-WebRequest -Uri $installerUrl -OutFile "python-installer.exe"
 
 # Copy the docker file and nupkg
-Copy-Item "$rootDir/_scripts/$dockerFile" -Destination "$tempFolderPath/AllUsers.dockerfile"
+Copy-Item "$rootDir/_scripts/$dockerFile" -Destination "$tempFolderPath/$dockerFile"
 Copy-Item "$nupkgPath" -Destination "$tempFolderPath/$(Split-Path $nupkgPath -leaf)"
 
 
