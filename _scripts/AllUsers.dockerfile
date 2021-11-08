@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/windows:1809-amd64
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
 WORKDIR C:/app
 
 ARG $INSTALLER_NAME
