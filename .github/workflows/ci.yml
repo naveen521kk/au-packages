@@ -215,7 +215,7 @@ jobs:
       with:
         name: chocologs-manim
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
-  nim_test:
+  manim_test_docker:
     runs-on: windows-latest
 
     steps:
