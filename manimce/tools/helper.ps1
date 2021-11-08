@@ -35,8 +35,18 @@ function FindPython {
   # see https://www.python.org/dev/peps/pep-0514/#structure
   # we are querying machine regsitry only because chocolatey
   # installs python in admin mode only.
-  $avaiable_installation = Get-ChildItem -Path Registry::HKEY_LOCAL_MACHINE\Software\Python\PythonCore | Select-Object Name
-  if ($avaiable_installation.length -gt 1){
+
+  Try {
+    $avaiable_installation = Get-ChildItem -Path Registry::HKEY_LOCAL_MACHINE\Software\Python\PythonCore | Select-Object Name
+  } 
+  Catch [System.Management.Automation.ItemNotFoundException]
+  {
+    Write-Host "Can't find python installed for all users. Searching for user installed python." -ForegroundColor Red
+    Write-Warning "This would mean you can't use manim outside of this user."
+    $avaiable_installation = Get-ChildItem -Path Registry::HKEY_CURRENT_USER\Software\Python\PythonCore | Select-Object Name
+  }
+
+  if ($avaiable_installation.length -gt 1) {
     [array]::Reverse($avaiable_installation)
   }
   foreach ($install in $avaiable_installation) {
@@ -44,31 +54,13 @@ function FindPython {
     $install_version = ($name_install -split '\\')[-1]
     if ($allowed_python_versions.Contains($install_version)) {
       Write-Host "Found Python $install_version from Registry" -ForegroundColor Yellow
-      try{
-          $python_executable = Get-ItemProperty -Path "Registry::$name_install\InstallPath" | Select-Object ExecutablePath
-          Write-Host "Found Install Path - $($python_executable.ExecutablePath)" -ForegroundColor Yellow
-          return $python_executable.ExecutablePath
+      try {
+        $python_executable = Get-ItemProperty -Path "Registry::$name_install\InstallPath" | Select-Object ExecutablePath
+        Write-Host "Found Install Path - $($python_executable.ExecutablePath)" -ForegroundColor Yellow
+        return $python_executable.ExecutablePath
       }
-      catch{
-         Write-Host "Install Path Not Found for $install_version - Skipping" -ForegroundColor Green
-      }
-    }
-  }
-  Write-Host "Can't find python installed for all users. Searching for user installed python." -ForegroundColor Red
-  Write-Warning "This would mean you can't use manim outside of this user."
-  $avaiable_installation = Get-ChildItem -Path Registry::HKEY_CURRENT_USER\Software\Python\PythonCore | Select-Object Name
-  foreach ($install in $avaiable_installation) {
-    $name_install = $install.Name
-    $install_version = ($name_install -split '\\')[-1]
-    if ($allowed_python_versions.Contains($install_version)) {
-      Write-Host "Found Python $install_version from Registry" -ForegroundColor Yellow
-      try{
-          $python_executable = Get-ItemProperty -Path "Registry::$name_install\InstallPath" | Select-Object ExecutablePath
-          Write-Host "Found Install Path - $($python_executable.ExecutablePath)" -ForegroundColor Yellow
-          return $python_executable.ExecutablePath
-      }
-      catch{
-         Write-Host "Install Path Not Found for $install_version - Skipping" -ForegroundColor Green
+      catch {
+        Write-Host "Install Path Not Found for $install_version - Skipping" -ForegroundColor Green
       }
     }
   }
