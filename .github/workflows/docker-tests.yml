@@ -25,3 +25,13 @@ jobs:
       shell: pwsh
       run: |
         _scripts/Test-Manim.ps1 $PWD.path ManimOnlyUserInstall.dockerfile
+
+  fresh-no-python:
+    runs-on: windows-2019
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Manim Docker Test - AllUserPythonInstalled
+      shell: pwsh
+      run: |
+        _scripts/Test-Manim.ps1 $PWD.path ManimNoPython.dockerfile
