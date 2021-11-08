@@ -215,3 +215,11 @@ jobs:
       with:
         name: chocologs-manim
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
+  nim_test:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Manim Docker Test
+      run: |
+        _scripts/Test-Manim.ps1
