@@ -216,12 +216,3 @@ jobs:
         name: chocologs-manim
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
 
-  manim_test_docker:
-    runs-on: windows-2019
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Manim Docker Test
-      shell: pwsh
-      run: |
-        _scripts/Test-Manim.ps1 $PWD.path

@@ -1,0 +1,15 @@
+name: Docker Tests
+
+on:
+  push:
+  workflow_dispatch:
+  release:
+  manim_test_docker:
+    runs-on: windows-2019
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Manim Docker Test - AllUserPythonInstalled
+      shell: pwsh
+      run: |
+        _scripts/Test-Manim.ps1 $PWD.path AllUsers.dockerfile
