@@ -221,5 +221,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Manim Docker Test
+      shell: pwsh
       run: |
-        _scripts/Test-Manim.ps1
+        _scripts/Test-Manim.ps1 $PWD.path
