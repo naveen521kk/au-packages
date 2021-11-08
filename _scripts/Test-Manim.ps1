@@ -16,9 +16,12 @@ Set-Location $tempFolderPath
 # Download Installer
 Invoke-WebRequest -Uri $installerUrl -OutFile "python-installer.exe"
 
+# Copy the docker file
+Copy-Item "$rootDir/_scripts/AllUsers.dockerfile" -Destination "$tempFolderPath/AllUsers.dockerfile"
+
 docker build --build-arg INSTALLER_NAME="python-installer.exe" `
     --build-arg CHOCOLATEY_NUPKG="$nupkgPath" `
-    -f "$rootDir/_scripts/AllUsers.dockerfile" `
+    -f "$tempFolderPath/AllUsers.dockerfile" `
     -t "naveen521kk/test-admin-windows" .
 
 
