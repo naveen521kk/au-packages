@@ -21,14 +21,18 @@ Invoke-WebRequest -Uri $installerUrl -OutFile "python-installer.exe"
 Copy-Item "$rootDir/_scripts/$dockerFile" -Destination "$tempFolderPath/$dockerFile"
 Copy-Item "$nupkgPath" -Destination "$tempFolderPath/$(Split-Path $nupkgPath -leaf)"
 
-
+Write-Output "::group::Building Container"
 docker build --build-arg INSTALLER_NAME="python-installer.exe" `
     --build-arg CHOCOLATEY_NUPKG="$(Split-Path $nupkgPath -leaf)" `
     -f "$tempFolderPath/$dockerFile" `
     -t "naveen521kk/test-windows" .
 
+Write-Output "::endgroup::"
+Write-Output "::group::Running Install"
 
 docker container run `
     --rm naveen521kk/test-windows `
     powershell -Command `
     "choco install --no-progress -y manimce -source `"'.;https://chocolatey.org/api/v2/'`""
+
+Write-Output "::endgroup::"
