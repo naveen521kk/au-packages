@@ -21,7 +21,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Manim Docker Test - AllUserPythonInstalled
+    - name: Manim Docker Test - ManimOnlyUserInstall
       shell: pwsh
       run: |
         _scripts/Test-Manim.ps1 $PWD.path ManimOnlyUserInstall.dockerfile
@@ -31,7 +31,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Manim Docker Test - AllUserPythonInstalled
+    - name: Manim Docker Test - ManimNoPython
       shell: pwsh
       run: |
         _scripts/Test-Manim.ps1 $PWD.path ManimNoPython.dockerfile
