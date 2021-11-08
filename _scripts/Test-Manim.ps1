@@ -26,6 +26,6 @@ docker build --build-arg INSTALLER_NAME="python-installer.exe" `
 
 
 docker container run `
-    --rm manimcommunity/minimal-windows `
+    --rm naveen521kk/test-admin-windows `
     powershell -Command `
     "choco install --no-progress manimce -source "'.;https://chocolatey.org/api/v2/'""
