@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/windows:2004-amd64
+FROM mcr.microsoft.com/windows:1809-amd64
 WORKDIR C:/app
 
 ARG $INSTALLER_NAME
