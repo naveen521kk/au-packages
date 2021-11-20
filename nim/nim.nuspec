@@ -40,6 +40,7 @@
 ### Notes
 - By default this package install's Nim along with MingW compiler and added to `PATH`.
 - You can disable by passing a parameter. See [here](#package-specific)
+- Virus scanning: High quantity of false positives is found due to unsigned binaries. See https://github.com/nim-lang/Nim/issues/17820.
 
 ## Package Specific
 ### Package Parameters
