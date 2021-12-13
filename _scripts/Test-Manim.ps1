@@ -2,7 +2,7 @@ $ErrorActionPreference = 'Stop';
 $rootDir = $args[0]
 $dockerFile = $args[1]
 
-$installerUrl = "https://www.python.org/ftp/python/3.9.8/python-3.9.8-amd64.exe"
+$installerUrl = "https://www.python.org/ftp/python/3.10.1/python-3.10.1-amd64.exe"
 
 
 # build manim nupkg
