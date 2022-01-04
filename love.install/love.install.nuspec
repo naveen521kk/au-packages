@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>love.install</id>
-    <version>11.3</version>
+    <version>11.4</version>
     <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/love.install</packageSourceUrl>
     <owners>naveen521kk</owners>
     <title>LÖVE - Free 2D Game Engine (Install)</title>
@@ -31,7 +31,7 @@ LÖVE is totally free, and can be used in anything from friendly open-source hob
 
 **Please Note:** This is an automatically updated package. If you find it is out of date by more than a day or two, please contact the maintainer(s) and let them know the package is no longer updating correctly.
     </description>
-    <releaseNotes>https://love2d.org/wiki/11.3</releaseNotes>
+    <releaseNotes>https://love2d.org/wiki/11.4</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
