@@ -23,7 +23,7 @@
 	This package works for both [3b1b's version of Manim](https://github.com/3b1b/manim) and [Community version of Manim](https://github.com/manimcommunity/manim).
 	
 	Note: This is based of [TinyTeX](https://chocolatey.org/packages/tinytex) with extra dependency required for Manim.
-	Please inform maintainers as this is an [automatic package](https://chocolatey.org/docs/automatic-packages).</description>
+	Please inform maintainers as this is an [automatic package](https://chocolatey.org/docs/automatic-packages). </description>
     <releaseNotes>https://manimce.readthedocs.io/en/latest/changelog.html</releaseNotes>   
     <dependencies>
       <dependency id="tinytex" version="2022.01" />
