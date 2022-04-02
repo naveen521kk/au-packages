@@ -89,7 +89,7 @@ jobs:
         name: chocologs
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
   test-manim-latex:
-    runs-on: windows-2016
+    runs-on: windows-2019
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
@@ -126,7 +126,7 @@ jobs:
         path: media
 
   manim_test:
-    runs-on: windows-2016
+    runs-on: windows-2019
 
     steps:
     - uses: actions/checkout@v2
