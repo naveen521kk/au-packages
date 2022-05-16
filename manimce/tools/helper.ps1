@@ -57,7 +57,12 @@ function FindPython {
       try {
         $python_executable = Get-ItemProperty -Path "Registry::$name_install\InstallPath" | Select-Object ExecutablePath
         Write-Host "Found Install Path - $($python_executable.ExecutablePath)" -ForegroundColor Yellow
-        return $python_executable.ExecutablePath
+        $path = $python_executable.ExecutablePath
+        if (!(Test-Path -Path $path))
+        {
+          throw [System.IO.FileNotFoundException] "$path not found."
+        }
+        return $path
       }
       catch {
         Write-Host "Install Path Not Found for $install_version - Skipping" -ForegroundColor Green
