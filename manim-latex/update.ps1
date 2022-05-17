@@ -7,9 +7,9 @@ $github_api_url='https://api.github.com/repos/yihui/tinytex-releases/releases'
 function global:au_GetLatest {
   $contentFetched = Invoke-WebRequest $github_api_url | ConvertFrom-Json
   $i=0
-  $stableRelease=$contentFetched[0]
+  $stableRelease=$contentFetched[$i]
   while ($contentFetched[$i].prerelease -eq $true){
-    $stableRelease=$j[$i+1]
+    $stableRelease=$contentFetched[$i+1]
     $i=$i+1
   }
   $version = $stableRelease.tag_name
