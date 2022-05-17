@@ -11,6 +11,8 @@ branches:
 #  verbosity: minimal
 
 environment:
+  my_email:
+    secure: 1mUNveTQF5DtGM/+zFI6RkNYMaD4zs1uw5hs8jLObRM=
   # Set au version to use or omit to use the latest. Specify branch name to use development version from Github
   au_version: master
   au_push: true
@@ -44,8 +46,8 @@ environment:
     secure: mrlpl7rIFjpgpRepfEGJjIDG5l9WtsDqYLJkKijIw6beOLc07bM2J+58J4+Q/X8J # https://ci.appveyor.com/tools/encrypt
 
 init:
-- git config --global user.email "chocolatey@realdimensions.net"
-- git config --global user.name "Chocolatey"
+- ps: git config --global user.email "$Env:my_email"
+- git config --global user.name "Naveen"
 - git config --global core.safecrlf false
 
 install:
