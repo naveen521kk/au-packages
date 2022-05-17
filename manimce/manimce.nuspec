@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>manimce</id>
-    <version>0.15.2</version>
+    <version>0.15.2.20220517</version>
     <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/manimce</packageSourceUrl>
     <owners>naveen521kk</owners>
     <title>Manim Install</title>
