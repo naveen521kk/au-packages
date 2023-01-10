@@ -47,7 +47,7 @@ jobs:
         choco install au
         $github_api_url = 'https://api.github.com/repos/boyter/scc/releases'
         function download_scc {
-          $contentFetched = Invoke-WebRequest $github_api_url | ConvertFrom-Json
+          $contentFetched = Invoke-WebRequest -Headers @{Authorization="$($env:GITHUB_TOKEN)"} $github_api_url | ConvertFrom-Json
           $i = 0
           $stableRelease = $contentFetched[0]
           while ($contentFetched[$i].prerelease -eq $true) {
