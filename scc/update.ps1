@@ -2,7 +2,16 @@ import-module au
 
 $github_api_url = 'https://api.github.com/repos/boyter/scc/releases'
 function global:au_GetLatest {
-  $contentFetched = Invoke-WebRequest $github_api_url | ConvertFrom-Json
+  # authentication token is stored in $GITHUB_TOKEN
+  if ($env:github_api_key) {
+    $headers = @{
+      Authorization="$($env:github_api_key)"
+    }
+  }
+  else {
+    $headers = @{}
+  }
+  $contentFetched = Invoke-WebRequest -Headers $headers $github_api_url | ConvertFrom-Json
   $i = 0
   $stableRelease = $contentFetched[0]
   while ($contentFetched[$i].prerelease -eq $true) {
