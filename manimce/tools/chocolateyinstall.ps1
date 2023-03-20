@@ -6,7 +6,7 @@ $version = '0.17.2'
 
 . $toolsPath\helper.ps1
 
-$allowed_python_versions = @('3.10', '3.9', '3.8', '3.7') # sync with nuspec
+$allowed_python_versions = @('3.11', '3.10', '3.9', '3.8') # sync with nuspec
 
 $python = FindPython $allowed_python_versions
 Write-Host "Found python at '$python' using it."
