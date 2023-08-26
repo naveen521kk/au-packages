@@ -13,4 +13,3 @@ RUN python-installer.exe /quiet InstallAllUsers=1
 
 # Copy stuff
 COPY $CHOCOLATEY_NUPKG $CHOCOLATEY_NUPKG
-COPY $MANIM_EXAMPLE_FILE $MANIM_EXAMPLE_FILE
