@@ -75,8 +75,8 @@ jobs:
           $version = Get-Version $version
           $url32 = $url32.ToString()
           $url64 = $url64.ToString()
-          curl -L $url64 -o tools\scc-2.13.0-x86_64-pc-windows.zip
-          curl -L $url32 -o tools\scc-2.13.0-i386-pc-windows.zip
+          curl -L $url64 -o tools\scc_3.1.0_Windows_x86_64.tar.gz
+          curl -L $url32 -o tools\scc_3.1.0_Windows_i386.tar.gz
           return @{ Version = $version; URL64 = $url64; URL32 = $url32; }
         }
         download_scc
