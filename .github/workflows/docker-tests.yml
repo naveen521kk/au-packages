@@ -7,7 +7,7 @@ on:
 
 jobs:
   admin-install:
-    runs-on: windows-2019
+    runs-on: windows-2022
 
     steps:
     - uses: actions/checkout@v2
@@ -17,7 +17,7 @@ jobs:
         _scripts/Test-Manim.ps1 $PWD.path ManimAllUsers.dockerfile
   
   user-install:
-    runs-on: windows-2019
+    runs-on: windows-2022
 
     steps:
     - uses: actions/checkout@v2
@@ -27,7 +27,7 @@ jobs:
         _scripts/Test-Manim.ps1 $PWD.path ManimOnlyUserInstall.dockerfile
 
   fresh-no-python:
-    runs-on: windows-2019
+    runs-on: windows-2022
 
     steps:
     - uses: actions/checkout@v2
