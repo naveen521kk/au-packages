@@ -33,7 +33,7 @@ This **installs** manim using [pip](https://pip.pypa.io/en/stable/) with its dep
 </description>
     <dependencies>
       <dependency id="ffmpeg" version="4.2" />
-      <dependency id="python" version="[3.7, 3.12)" />
+      <dependency id="python" version="[3.8, 3.12)" />
     </dependencies>
   </metadata>
   <files>
