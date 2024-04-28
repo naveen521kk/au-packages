@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>manimce</id>
-    <version>0.18.0</version>
+    <version>0.18.1</version>
     <packageSourceUrl>https://github.com/naveen521kk/au-packages/tree/master/manimce</packageSourceUrl>
     <owners>naveen521kk</owners>
     <title>Manim Install</title>
@@ -14,7 +14,7 @@
     <licenseUrl>https://github.com/ManimCommunity/manim/blob/master/LICENSE.community</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/ManimCommunity/manim</projectSourceUrl>
-    <docsUrl>https://docs.manim.community/en/v0.18.0</docsUrl>
+    <docsUrl>https://docs.manim.community/en/v0.18.1</docsUrl>
     <bugTrackerUrl>https://github.com/ManimCommunity/manim/issues</bugTrackerUrl>
     <tags>manim python animation math</tags>
     <summary>A community-maintained Python framework for creating mathematical animations.</summary>

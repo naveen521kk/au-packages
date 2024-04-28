@@ -2,7 +2,7 @@
 $InstallLocation = Get-ToolsLocation
 $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 
-$version = '0.18.0'
+$version = '0.18.1'
 
 . $toolsPath\helper.ps1
 
