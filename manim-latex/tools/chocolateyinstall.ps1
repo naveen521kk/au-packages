@@ -1,9 +1,9 @@
 ﻿$ErrorActionPreference = 'Stop'
-#tlmgr is package manager included in TinyTeX
-Start-ChocolateyProcessAsAdmin `
-  -Statements "tlmgr update --self" `
-  -Elevated
-Start-ChocolateyProcessAsAdmin `
-  -Statements "tlmgr install standalone everysel ctex frcursive preview doublestroke ms setspace rsfs relsize ragged2e fundus-calligra microtype wasysym physics dvisvgm jknapltx wasy cm-super babel-english gnu-freefont mathastext cbfonts-fd" `
-  -Elevated
 
+$toolsDir = Get-ToolsLocation
+#tlmgr is the package manager included in TinyTeX
+$statementsToRun = "/C `"$toolsDir\TinyTeX\bin\windows\tlmgr.bat update --self`""
+Start-ChocolateyProcessAsAdmin $statementsToRun "$env:WINDIR\system32\cmd.exe"
+
+$statementsToRun = "/C `"$toolsDir\TinyTeX\bin\windows\tlmgr.bat install standalone everysel ctex frcursive preview doublestroke ms setspace rsfs relsize ragged2e fundus-calligra microtype wasysym physics dvisvgm jknapltx wasy cm-super babel-english gnu-freefont mathastext cbfonts-fd`""
+Start-ChocolateyProcessAsAdmin $statementsToRun "$env:WINDIR\system32\cmd.exe"
