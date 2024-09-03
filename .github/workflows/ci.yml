@@ -11,7 +11,7 @@ jobs:
   test:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Test some Packages
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -86,21 +86,21 @@ jobs:
         choco uninstall scc
         cd ../
     # Runs a set of commands using the runners shell
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v4
       with:
         name: chocologs
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
   test-manim-latex:
-    runs-on: windows-2019
+    runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
-         python-version: 3.8.5
+         python-version: 3.11.9
     - name: Install Python
       run: |
-        choco install python3 --no-progress --version=3.8.5
+        choco install python3 --no-progress --version=3.11.9
     - name: Install Manim
       run: |
         choco install --no-progress manimce
@@ -111,18 +111,18 @@ jobs:
 
     - name: Install Manim and Manim-Tex and test
       run: |
-        $env:PATH="C:\tools\TinyTeX\bin\win32;$env:PATH"
+        $ErrorActionPreference = 'Stop'
+        $env:PATH="C:\tools\TinyTeX\bin\windows;$env:PATH"
         curl -L https://pastebin.com/raw/QcbYFiTz -o tex.py
         pip install manim
         python -m manim tex.py
         curl -L https://gist.github.com/naveen521kk/15f4938acd774b576bd05d86ef4e7d45/raw/52c080525cbae61b7916657f20328799f419bcc0/brace.py -o brace1.py
         python -m manim brace1.py
-        choco uninstall manim-latex
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v4
       with:
         name: chocologs
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v4
       with:
         name: mediaManim.zip
         path: media
@@ -131,17 +131,17 @@ jobs:
     runs-on: windows-2019
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
-         python-version: "3.9.4"
+         python-version: "3.11.9"
     - name: Make choco Package
       run: |
         cd "manimce"
         choco pack
         choco install --no-progress ffmpeg
-        choco install --no-progress python --version=3.9.4
+        choco install --no-progress python --version=3.11.9
         choco install --no-progress manimce --source "."
     - name: Test Generated Files
       shell: cmd
@@ -155,13 +155,13 @@ jobs:
         manim basic.py SquareToCircle
         choco uninstall -y manimce
     - name: Upload Logs if failes
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       if: ${{ failure() }}
       with:
         name: chocologs-manim
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
     - name: Upload Logs
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: chocologs-manim
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
@@ -170,7 +170,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Set Up
       shell: pwsh
       run: |
@@ -193,7 +193,7 @@ jobs:
     - name: Install
       shell: pwsh
       run: | 
-        choco install --no-progress nim --source "."
+        choco install --no-progress nim --source "'.;https://chocolatey.org/api/v2/'"
     - name: Smoke Tests
       shell: pwsh
       working-directory: ${{ runner.temp }}
@@ -209,13 +209,13 @@ jobs:
       run: |
         tree C:\tools
     - name: Upload Logs if failes
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       if: ${{ failure() }}
       with:
         name: chocologs-manim
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
     - name: Upload Logs
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: chocologs-manim
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
