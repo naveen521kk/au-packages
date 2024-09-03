@@ -113,19 +113,13 @@ jobs:
       run: |
         $ErrorActionPreference = 'Stop'
         $env:PATH="C:\tools\TinyTeX\bin\windows;$env:PATH"
-        curl -L https://pastebin.com/raw/QcbYFiTz -o tex.py
         pip install manim
-        python -m manim tex.py
-        curl -L https://gist.github.com/naveen521kk/15f4938acd774b576bd05d86ef4e7d45/raw/52c080525cbae61b7916657f20328799f419bcc0/brace.py -o brace1.py
-        python -m manim brace1.py
+        python -m manim checkhealth
+
     - uses: actions/upload-artifact@v4
       with:
         name: chocologs
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
-    - uses: actions/upload-artifact@v4
-      with:
-        name: mediaManim.zip
-        path: media
 
   manim_test:
     runs-on: windows-2019
