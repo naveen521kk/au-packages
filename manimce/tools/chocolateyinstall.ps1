@@ -1,4 +1,4 @@
-$ErrorActionPreference = 'Stop';
+﻿$ErrorActionPreference = 'Stop';
 $InstallLocation = Get-ToolsLocation
 $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 
@@ -6,7 +6,7 @@ $version = '0.18.1'
 
 . $toolsPath\helper.ps1
 
-$allowed_python_versions = @('3.11', '3.10', '3.9', '3.8') # sync with nuspec
+$allowed_python_versions = @('3.12', '3.11', '3.10', '3.9', '3.8') # sync with nuspec
 
 $python = FindPython $allowed_python_versions
 Write-Host "Found python at '$python' using it."
