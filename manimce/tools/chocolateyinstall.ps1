@@ -1,4 +1,4 @@
-﻿$ErrorActionPreference = 'Stop';
+$ErrorActionPreference = 'Stop';
 $InstallLocation = Get-ToolsLocation
 $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 
@@ -21,9 +21,9 @@ New-Item -ItemType Directory -Force -Path "$InstallLocation\Manim"
 New-Item "$InstallLocation\Manim\installInfo.json" -Force -ItemType file -Value $install #save install info
 
 $ErrorActionPreference = 'Continue'; # pip fails by giving some warnings
-Write-Host "Upgrading pip and install Wheel" -ForegroundColor Yellow
+Write-Host "Upgrading pip and installing wheel, setuptools" -ForegroundColor Yellow
 & "$python" -m ensurepip
-& "$python" -m pip install --upgrade pip wheel --no-warn-script-location
+& "$python" -m pip install --upgrade pip wheel setuptools --no-warn-script-location
 
 Write-Host "Installing Manim to $InstallLocation\Manim"
 & "$python" -m pip install "manim==$version" --no-cache --compile --prefix="$InstallLocation\Manim" --no-warn-script-location --log="pip.log" --no-warn-conflicts --force
