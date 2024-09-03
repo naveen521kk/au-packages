@@ -152,12 +152,12 @@ jobs:
       uses: actions/upload-artifact@v4
       if: ${{ failure() }}
       with:
-        name: chocologs-manim
+        name: chocologs-manim-failed
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
     - name: Upload Logs
       uses: actions/upload-artifact@v4
       with:
-        name: chocologs-manim
+        name: chocologs-manim-success
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
   
   nim_test:
@@ -206,11 +206,11 @@ jobs:
       uses: actions/upload-artifact@v4
       if: ${{ failure() }}
       with:
-        name: chocologs-manim
+        name: chocologs-nim-failed
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
     - name: Upload Logs
       uses: actions/upload-artifact@v4
       with:
-        name: chocologs-manim
+        name: chocologs-nim-success
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
 
