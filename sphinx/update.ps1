@@ -5,7 +5,7 @@ $releases = 'https://pypi.python.org/pypi/sphinx'
 function global:au_SearchReplace {
     @{
         'tools\ChocolateyInstall.ps1' = @{
-            "(^[$]version\s*=\s*)('.*')" = "`$1'$($Latest.Version)'"
+            "(^[$]version\s*=\s*)('.*')" = "`${1}'$(($Latest.Version -split '\.')[0,1,2] -join '.')'"
         }
      }
 }
