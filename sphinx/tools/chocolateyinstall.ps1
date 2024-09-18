@@ -1,4 +1,5 @@
-﻿Update-SessionEnvironment
+﻿$ErrorActionPreference = 'Stop';
+Update-SessionEnvironment
 
 $version = '8.0.2'
 
