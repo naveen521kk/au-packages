@@ -6,8 +6,8 @@ Package can be verified like this:
 
 1. Go to https://nim-lang.org/install_windows.html, and find these URL
 
-   x32: https://nim-lang.org/download/nim-2.0.8_x32.zip
-   x64: https://nim-lang.org/download/nim-2.0.8_x64.zip
+   x32: https://nim-lang.org/download/nim-2.2.0_x32.zip
+   x64: https://nim-lang.org/download/nim-2.2.0_x64.zip
 
    to download the zip files. You may wish to rename one of the files.
 
@@ -15,8 +15,8 @@ Package can be verified like this:
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 924B759D539AACE403407DF3573516F6016EADED2E6BC57466ACC489E915CA50
-   checksum64: AD073AF8FE578EDAB89A0C71809C7F252A85BA1905F32B5351A92323657E15E1
+   checksum32: 67B0BDF4F190CCECE7187FC2949703B2FCE6CFFAE407E295F2E176674736CF4D
+   checksum64: 932970ED7535C7665C4F79005044ED5240426B5D2B55BFDBA36DACC5AF479E9D
 
 File 'LICENSE.txt' obtained from:
    https://github.com/nim-lang/Nim/blob/devel/copying.txt
