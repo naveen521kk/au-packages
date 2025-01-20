@@ -10,7 +10,7 @@
     <authors>Manim Contributors</authors>
     <projectUrl>https://www.manim.community/</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/ManimCommunity/manim/logo/light/transparent_background.png</iconUrl>
-    <copyright>© Manim Contributors 2020</copyright>
+    <copyright>© Manim Contributors 2025</copyright>
     <licenseUrl>https://github.com/ManimCommunity/manim/blob/master/LICENSE.community</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/ManimCommunity/manim</projectSourceUrl>
@@ -32,8 +32,7 @@ This **installs** manim using [pip](https://pip.pypa.io/en/stable/) with its dep
 
 </description>
     <dependencies>
-      <dependency id="ffmpeg" version="4.2" />
-      <dependency id="python" version="[3.8, 3.13)" />
+      <dependency id="python" version="[3.9, 3.14)" />
     </dependencies>
   </metadata>
   <files>
