@@ -11,11 +11,17 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -UseBasicParsing -Uri $releases
+    $apiUrl = 'https://pypi.org/pypi/sphinx/json'
+    
+    $response = Invoke-RestMethod -Uri $apiUrl -Method Get
+    if ($null -eq $response) {
+        throw "Failed to retrieve the latest version from $apiUrl"
+    }
 
-    $re = 'sphinx\/[\d\.]+\/$'
-    $url = $download_page.links | ? href -match $re | select -first 1 -expand href
-    $version = $url -split '\/' | select -last 1 -skip 1
+    $version = $response.info.version
+    if ($null -eq $latestRelease) {
+        throw "Failed to find the latest release in the response"
+    }
 
     return @{ Version = $version }
 }
