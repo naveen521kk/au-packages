@@ -1,4 +1,4 @@
-import-module au
+import-module Chocolatey-AU
 
 $gem_api_url='https://rubygems.org/api/v1/versions/travis/latest.json'
 # Looks like they don'[t publish release in Github so dirctly taking from gem API.

@@ -1,4 +1,4 @@
-import-module au
+import-module Chocolatey-AU
 
 #for mysql python connector
 $releases = 'https://dev.mysql.com/downloads/connector/python/'

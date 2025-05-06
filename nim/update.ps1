@@ -1,4 +1,4 @@
-import-module au
+import-module Chocolatey-AU
 
 $github_api_url = 'https://api.github.com/repos/nim-lang/Nim/tags'
 function global:au_GetLatest {

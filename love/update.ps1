@@ -1,4 +1,4 @@
-import-module au
+import-module Chocolatey-AU
 
 #for love
 $releases = 'https://github.com/love2d/love/releases/'

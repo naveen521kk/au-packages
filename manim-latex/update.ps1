@@ -1,4 +1,4 @@
-import-module au
+import-module Chocolatey-AU
 
 #for tinytex
 $releases = 'https://github.com/yihui/tinytex-releases/releases'
