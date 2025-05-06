@@ -13,7 +13,7 @@ function global:au_SearchReplace {
 function global:au_GetLatest {
     $apiUrl = 'https://pypi.org/pypi/sphinx/json'
     
-    $response = Invoke-RestMethod -Uri $apiUrl -Method Get
+    $response = Invoke-WebRequest -Uri $apiUrl | ConvertFrom-Json
     if ($null -eq $response) {
         throw "Failed to retrieve the latest version from $apiUrl"
     }
