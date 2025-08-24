@@ -122,7 +122,7 @@ jobs:
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
 
   manim_test:
-    runs-on: windows-2019
+    runs-on: windows-2022
 
     steps:
     - uses: actions/checkout@v4
