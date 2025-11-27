@@ -10,17 +10,23 @@ on:
 jobs:
   test:
     runs-on: windows-latest
+    env:
+      au_Push: "false"
     steps:
     - uses: actions/checkout@v6
-    - name: Test some Packages
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Install AU
+      run: |
+        choco install --no-progress chocolatey-au
+    - name: Test mysql-python
       run: |
         cd mysql-python
         choco pack
         choco install --no-progress mysql-python -source "'.;https://chocolatey.org/api/v2/'"
         choco uninstall -y mysql-python
         cd ../
+    - name: Test love.install
+      run: |
         cd love.install
         choco pack
         choco install --no-progress love.install -source "'.;https://chocolatey.org/api/v2/'"
@@ -28,58 +34,33 @@ jobs:
         choco uninstall -y love.install
         Test-Path -Path "C:\Program Files\LOVE"
         cd ../
+    - name: Test travis
+      run: |
         cd travis
         choco pack
         choco install --no-progress travis -source "'.;https://chocolatey.org/api/v2/'"
         choco uninstall travis
         cd ../
+    - name: Test love.portable
+      run: |
         cd love.portable
         choco pack
         choco install --no-progress love.portable -source "'.;https://chocolatey.org/api/v2/'"
         choco uninstall -y love.portable
         cd ../
+    - name: Test sphinx
+      run: |
         cd sphinx
         choco pack
         choco install --no-progress sphinx -source "'.;https://chocolatey.org/api/v2/'"
         choco uninstall -y sphinx
         cd ../
+    - name: Test scc
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
         cd scc
-        $au_Push=$false
-        $env:au_Push = $false
-        choco install au
-        $github_api_url = 'https://api.github.com/repos/boyter/scc/releases'
-        function download_scc {
-          $contentFetched = Invoke-WebRequest -Headers @{Authorization="Bearer $($env:GITHUB_TOKEN)"} $github_api_url | ConvertFrom-Json
-          $i = 0
-          $stableRelease = $contentFetched[0]
-          while ($contentFetched[$i].prerelease -eq $true) {
-            $stableRelease = $j[$i + 1]
-            $i = $i + 1
-          }
-          $regex32 = '.*scc_.*_Windows_i386.tar.gz'
-          $regex64 = '.*scc_.*_Windows_x86_64.tar.gz'
-          foreach ($asset in $stableRelease.assets) {
-            if (!($url64)) {
-              $url64 = Select-String -InputObject $asset.browser_download_url -Pattern $regex64
-              $id64 = $asset.id
-            }
-            if (!($url32)) {
-              $url32 = Select-String -InputObject $asset.browser_download_url -Pattern $regex32
-              $id32 = $asset.id
-            }
-            if ($url64 -and $url32) {
-              break
-            }
-          }
-          $version = $stableRelease.tag_name
-          $version = Get-Version $version
-          $url32 = $url32.ToString()
-          $url64 = $url64.ToString()
-          curl -L $url64 -o tools\scc_3.1.0_Windows_x86_64.tar.gz
-          curl -L $url32 -o tools\scc_3.1.0_Windows_i386.tar.gz
-          return @{ Version = $version; URL64 = $url64; URL32 = $url32; }
-        }
-        download_scc
+        .\update.ps1
         tree /F /A tools
         choco pack
         choco install --no-progress scc -source "'.;https://chocolatey.org/api/v2/'"
