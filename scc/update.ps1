@@ -19,8 +19,8 @@ function global:au_GetLatest {
     $i = $i + 1
   }
   
-  $regex32 = '.*scc_.*_Windows_i386.tar.gz'
-  $regex64 = '.*scc_.*_Windows_x86_64.tar.gz'
+  $regex32 = 'scc_Windows_i386.zip'
+  $regex64 = 'scc_Windows_x86_64.zip'
   foreach ($asset in $stableRelease.assets) {
     if (!($url64)) {
       $url64 = Select-String -InputObject $asset.browser_download_url -Pattern $regex64
