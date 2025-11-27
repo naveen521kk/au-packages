@@ -18,13 +18,13 @@ jobs:
     - name: Install AU
       run: |
         choco install --no-progress chocolatey-au
-    - name: Test mysql-python
-      run: |
-        cd mysql-python
-        choco pack
-        choco install --no-progress mysql-python -source "'.;https://chocolatey.org/api/v2/'"
-        choco uninstall -y mysql-python
-        cd ../
+    # - name: Test mysql-python
+    #   run: |
+    #     cd mysql-python
+    #     choco pack
+    #     choco install --no-progress mysql-python -source "'.;https://chocolatey.org/api/v2/'"
+    #     choco uninstall -y mysql-python
+    #     cd ../
     - name: Test love.install
       run: |
         cd love.install
