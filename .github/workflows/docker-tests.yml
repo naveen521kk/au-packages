@@ -10,7 +10,7 @@ jobs:
     runs-on: windows-2022
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v6
     - name: Manim Docker Test - AllUserPythonInstalled
       shell: pwsh
       run: |
@@ -20,7 +20,7 @@ jobs:
     runs-on: windows-2022
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v6
     - name: Manim Docker Test - ManimOnlyUserInstall
       shell: pwsh
       run: |
@@ -30,7 +30,7 @@ jobs:
     runs-on: windows-2022
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v6
     - name: Manim Docker Test - ManimNoPython
       shell: pwsh
       run: |
