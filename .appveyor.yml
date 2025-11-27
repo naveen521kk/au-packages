@@ -75,8 +75,8 @@ install:
 - git --version
 - choco --version
 - ps: |
-    git clone -q https://github.com/chocolatey-community/chocolatey-au.git $Env:TEMP/au
-    . "$Env:TEMP/au/scripts/Install-AU.ps1" $Env:au_version > $null
+    # install AU
+    choco install chocolatey-au
 
 - ps: |
     "Build info"
