@@ -19,7 +19,7 @@ function global:au_GetLatest {
     }
 
     $version = $response.info.version
-    if ($null -eq $latestRelease) {
+    if ($null -eq $version) {
         throw "Failed to find the latest release in the response"
     }
 
