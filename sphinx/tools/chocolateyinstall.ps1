@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop';
 Update-SessionEnvironment
 
-$version = '9.0.2'
+$version = '9.0.4'
 
 $proxy = Get-EffectiveProxy
 if ($proxy) {
