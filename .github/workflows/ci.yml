@@ -67,7 +67,7 @@ jobs:
         choco uninstall scc
         cd ../
     # Runs a set of commands using the runners shell
-    - uses: actions/upload-artifact@v5
+    - uses: actions/upload-artifact@v6
       with:
         name: chocologs
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
@@ -97,7 +97,7 @@ jobs:
         pip install manim
         python -m manim checkhealth
 
-    - uses: actions/upload-artifact@v5
+    - uses: actions/upload-artifact@v6
       with:
         name: chocologs
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
@@ -130,13 +130,13 @@ jobs:
         manim basic.py SquareToCircle
         choco uninstall -y manimce
     - name: Upload Logs if failes
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v6
       if: ${{ failure() }}
       with:
         name: chocologs-manim-failed
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
     - name: Upload Logs
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v6
       with:
         name: chocologs-manim-success
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
@@ -184,13 +184,13 @@ jobs:
       run: |
         tree C:\tools
     - name: Upload Logs if failes
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v6
       if: ${{ failure() }}
       with:
         name: chocologs-nim-failed
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
     - name: Upload Logs
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v6
       with:
         name: chocologs-nim-success
         path: C:\ProgramData\chocolatey\logs\chocolatey.log
