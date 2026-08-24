@@ -7,8 +7,8 @@ Package can be verified like this:
 1. Go to https://github.com/boyter/scc/releases/tag/v<version>, scroll down to assets section
 and find these URL
 
-   x32: https://github.com/boyter/scc/releases/download/v3.7.0/scc_Windows_i386.zip
-   x64: https://github.com/boyter/scc/releases/download/v3.7.0/scc_Windows_x86_64.zip
+   x32: https://github.com/boyter/scc/releases/download/v4.0.0/scc_Windows_i386.zip
+   x64: https://github.com/boyter/scc/releases/download/v4.0.0/scc_Windows_x86_64.zip
 
    to download the zip files. You may wish to rename one of the files.
 
@@ -16,8 +16,8 @@ and find these URL
    - Use powershell function 'Get-FileHash'
    - Use Chocolatey utility 'checksum.exe'
 
-   checksum32: 7B887022C37DC79E79AE51897030A6FF2515AB7B124E7B2AABCB0FBA15412B05
-   checksum64: 97ABF9D55D4B79D3310536D576CCBDF5017AEB425780E850336120B6E67622E1
+   checksum32: 09791BFF87CC28F052C239AA68387B87CA6CFE8834589C3244AEB68668E20303
+   checksum64: BFD4F956F6C23917FEE3A0ED0D950B80EE914FB4555EFFE9C6ABBE0C30F1EC2F
 
 File 'LICENSE.txt' obtained from:
    https://github.com/boyter/scc/blob/master/LICENSE
